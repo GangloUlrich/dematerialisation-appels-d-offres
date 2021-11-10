@@ -1,0 +1,345 @@
+
+
+<x-guest-layout>
+    <x-auth-card>
+        <x-slot name="logo">
+            <a href="/">
+                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+            </a>
+        </x-slot>
+
+        <!-- Validation Errors -->
+        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+
+        <form method="POST" action="{{ route('register') }}">
+            @csrf
+
+            <!-- Name -->
+            <div>
+                <x-label for="name" :value="__('Name')" />
+
+                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+            </div>
+
+            <!-- Email Address -->
+            <div class="mt-4">
+                <x-label for="email" :value="__('Email')" />
+
+                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+            </div>
+
+            <!-- Password -->
+            <div class="mt-4">
+                <x-label for="password" :value="__('Password')" />
+
+                <x-input id="password" class="block mt-1 w-full"
+                                type="password"
+                                name="password"
+                                required autocomplete="new-password" />
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="mt-4">
+                <x-label for="password_confirmation" :value="__('Confirm Password')" />
+
+                <x-input id="password_confirmation" class="block mt-1 w-full"
+                                type="password"
+                                name="password_confirmation" required />
+            </div>
+
+            <div class="flex items-center justify-end mt-4">
+                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+                    {{ __('Already registered?') }}
+                </a>
+
+                <x-button class="ml-4">
+                    {{ __('Register') }}
+                </x-button>
+            </div>
+        </form>
+    </x-auth-card>
+</x-guest-layout>
+
+
+
+*////////////////////////////////////////////////app blade ///////////////////////////////////////////////
+
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
+        <title>{{ config('app.name', 'Laravel') }}</title>
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
+        <!-- Scripts -->
+        <script src="{{ asset('js/app.js') }}" defer></script>
+    </head>
+    <body class="font-sans antialiased">
+        <div class="min-h-screen bg-gray-100">
+            @include('layouts.navigation')
+
+            <!-- Page Heading -->
+            <header class="bg-white shadow">
+                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                    {{ $header }}
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <main>
+                {{ $slot }}
+            </main>
+        </div>
+    </body>
+</html>
+
+
+
+//////////////////////////////////CONNEXION/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+<x-guest-layout>
+    <x-auth-card>
+        <x-slot name="logo">
+            <a href="/">
+                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+            </a>
+        </x-slot>
+
+        <!-- Session Status -->
+        <x-auth-session-status class="mb-4" :status="session('status')" />
+
+        <!-- Validation Errors -->
+        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+
+        <form method="POST" action="{{ route('login') }}">
+            @csrf
+
+            <!-- Email Address -->
+            <div>
+                <x-label for="email" :value="__('Email')" />
+
+                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+            </div>
+
+            <!-- Password -->
+            <div class="mt-4">
+                <x-label for="password" :value="__('Password')" />
+
+                <x-input id="password" class="block mt-1 w-full"
+                                type="password"
+                                name="password"
+                                required autocomplete="current-password" />
+            </div>
+
+            <!-- Remember Me -->
+            <div class="block mt-4">
+                <label for="remember_me" class="inline-flex items-center">
+                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
+                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                </label>
+            </div>
+
+            <div class="flex items-center justify-end mt-4">
+                @if (Route::has('password.request'))
+                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
+                        {{ __('Forgot your password?') }}
+                    </a>
+                @endif
+
+                <x-button class="ml-3">
+                    {{ __('Log in') }}
+                </x-button>
+            </div>
+        </form>
+    </x-auth-card>
+</x-guest-layout>
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+<!doctype html>
+<html lang="fr">
+  <head>
+
+    <title>{{ env('APP_NAME', ' Plateforme') }}</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <!-- Fonts -->
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" >
+
+    @stack('stylesheets')
+    {{-- custom css --}}
+    <link rel="stylesheet" href="{{ asset('bootstrap/style.css')}}">
+{{--  font awesome icons --}}
+<link rel="stylesheet" href="{{ asset("bootstrap/font-awesome/css/font-awesome.min.css")}}">
+
+    <style>
+      body{
+        background-color:#f0f0f0;
+      }
+
+      .active .bs-stepper-circle {
+  background-color: #299A75;
+}
+    </style>
+  </head>
+  <body>
+
+    <div class="loader">
+        <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        <p>Chargement...</p>
+    </div>
+
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white ">
+        <div class="container-fluid">
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="{{ asset('img/logo.png') }}" class="img-brand" alt=""></a>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul class="navbar-nav mx-auto p-2 text-uppercase">
+
+              <li class="nav-item">
+                <a class="nav-link fw-1 active" aria-current="page" href="{{ route('accueil')}}">Accueil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-1" href="{{ route('avis')}}">Avis d'appel d'offres</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link fw-1 dropdown-toggle" href="{{ route('proces') }}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Procès-verbaux
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="{{ route('proces_ouverture') }}">Procès verbal d'ouverture</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="{{ route('proces_attProvisoire') }}">Procès-verbal d'attribution provisoire</a></li>
+
+                  <li><a class="dropdown-item" href="{{ route('proces_attDefinitive')}}">Procès-verbal d'attribution définitive</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-1" href="{{ route('structures')}}">Structures</a>
+              </li>
+
+
+            </ul>
+            <ul class="nav">
+
+                @yield('add-button')
+
+            </ul>
+
+
+
+          </div>
+        </div>
+      </nav>
+
+
+      <div class="container-fluid p-lg-3 " style="margin-top: 5em;">
+
+            @yield('content')
+
+      </div>
+
+
+
+     <div class="container-fluid">
+         <div class="row">
+             <div class="col-4 p-1 bg-success"></div>
+             <div class="col-4 p-1 bg-warning"></div>
+             <div class="col-4 p-1 bg-danger"></div>
+         </div>
+         <div class="row p-5 text-center bg-gray-dark text-white">
+             <small>&copy;Copyright 2021 PDO Marches publics et privés | Tous droits reservés.</small>
+         </div>
+     </div>
+
+
+     {{-- <div class="container-fluid d-flex bg-white  app flex-row">
+
+        <div class="col-md-5 bg-success d-flex align-items-center flex-column text-white  p-5">
+            <h1 class="fw-bold">Bon retour parmi nous </h1>
+            <img src="{{ asset('img/docs.svg') }}" alt="" >
+        </div>
+
+             <div class="col-md-7  p-4 d-flex justify-content-center">
+
+                      <h3 class="text-center ">CONNEXION</h3>
+                      <form action="" method="post" class="mx-auto">
+
+                        @csrf
+
+
+
+                          <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email')}}">
+                            @error('email') <small class="text-danger">{{ $message }}</small>@enderror
+                          </div>
+
+                          <div class="mb-3">
+                            <label for="password" class="form-label">Mot de passe</label>
+                            <input type="password" name="password" id="password" class="form-control @error('password') is-invalid @enderror" value="{{ old('password')}}">
+                            @error('password') <small class="text-danger">{{ $message }}</small>@enderror
+                          </div>
+
+                          <div class="mb-3 d-flex justify-content-end">
+                                  <a href="" class="text-success">Mot de passe oublié ?</a>
+                          </div>
+
+
+                          <div class="form-check mb-3">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled">
+                              <label class="form-check-label" for="flexCheckDisabled">
+                               Se rappeler de moi
+                              </label>
+                            </div>
+
+
+
+                           <button class="btn btn-success w-100">SE CONNECTER</button>
+                      </form>
+
+             </div>
+
+
+
+     </div> --}}
+
+    <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}" ></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+    <script>
+        //paste this code under head tag or in a seperate js file.
+        // Wait for window load
+        $(window).load(function() {
+            // Animate loader off screen
+            $(".loader").fadeOut("slow");;
+        });
+    </script>
+
+    @stack('scripts')
+
+  </body>
+</html>

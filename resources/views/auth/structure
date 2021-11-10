@@ -1,0 +1,384 @@
+@extends('layouts.connect')
+
+@section('add-button')
+
+<li class="nav-item me-3 ">
+    <a class="nav-link fw-1 btn btn-secondary text-white" href="{{ route('login') }}">CONNEXION</a>
+  </li>
+
+@endsection
+
+
+
+@section('content')
+
+<div class="container col-sm-12  p-3">
+
+  <div class="card ">
+    <div class="card-header p-2 bg-secondary text-white">
+
+    </div>
+
+
+
+    <div class="card-body p-lg-5 ">
+
+      <div class="text-center">
+        <h3 class="text-center ">INSCRIPTION</h3>
+      <small class="text-center text-success">Vous vous inscrivez en tant qu'organisation/entreprises/institutions gouvernementales</small>
+      </div>
+
+      <form action="{{ route('register') }}" method="POST" class="mx-auto" >
+
+
+
+        @csrf
+
+        <input type="hidden" name="res" value=2>
+
+        <div class="row mb-3">
+          <div class="col-12">
+                  <label for="name" class="form-label">Nom de la structure</label>
+                  <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror">
+                  @error('name') <small class="text-danger">{{ $message }}</small>@enderror
+          </div>
+        </div>
+
+        <div class="row mb-3">
+
+
+          <div class="col-md-6 col-sm-12">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror">
+            @error('email') <small class="text-danger">{{ $message }}</small>@enderror
+          </div>
+
+          <div class="col-md-6 col-sm-12">
+            <label for="tel" class="form-label">Numero de telephone</label>
+            <input type="text" name="tel" id="tel" class="form-control @error('tel') is-invalid @enderror">
+            @error('tel') <small class="text-danger">{{ $message }}</small>@enderror
+          </div>
+        </div>
+
+        {{-- <div class="row mb-3">
+          <div class="col-md-6 col-sm-12">
+                  <label for="addr" class="form-label">Adresse</label>
+                  <input type="text" name="adresse" id="addr" class="form-control">
+          </div>
+
+          <div class="col-md-6 col-sm-12">
+            <label for="logo" class="form-label">Logo de la structure</label>
+            <input type="file" name="logo" id="logo" class="form-control">
+          </div>
+
+
+        </div> --}}
+
+        <div class="row mb-3">
+            <div class="col-12 mb-2">
+
+
+            <div class="form-check">
+                <input class="form-check-input @error('type') is-invalid @enderror" type="radio" name="type" id="s_public" value="s_public" >
+                <label class="form-check-label" for="s_public">
+                  Structure publique /Organisations
+                </label>
+
+              </div>
+              <div class="form-check">
+                <input class="form-check-input @error('type') is-invalid @enderror" type="radio" name="type" id="s_privee" value="s_privee" >
+                <label class="form-check-label" for="s_privee">
+                 Structure privee/ entreprises
+                </label>
+              </div>
+              @error('type') <small class="text-danger">{{ $message }}</small>@enderror
+            </div>
+
+            <div class="row mb-3 d-none" id="condition">
+                <div class="col-md-6 col-sm-12">
+                        <label for="ifu" class="form-label">Numero d'identification fiscale</label>
+                        <input type="number" name="ifu" id="ifu" class="form-control">
+                </div>
+
+                <div class="col-md-6 col-sm-12">
+                  <label for="rccm" class="form-label">Extrait du registre de commerce </label>
+                  <input type="text" name="rccm" id="rccm" class="form-control">
+                </div>
+              </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-md-6 col-sm-12">
+                  <label for="password" class="form-label">Mot de passe</label>
+                  <input type="password" name="password" id="password" class="form-control @error('password') is-invalid @enderror">
+                  @error('password') <small class="text-danger">{{ $message }}</small>@enderror
+                </div>
+
+          <div class="col-md-6 col-sm-12">
+            <label for="pass" class="form-label">Confirmer le mot de passe </label>
+            <input type="password" name="password_confirmation" id="pass" class="form-control @error('confirmation') is-invalid @enderror">
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input @error('conditions') is-invalid @enderror" type="checkbox" id="flexCheckDefault" name="conditions">
+              <label class="form-check-label" for="flexCheckDefault">
+                <a href="#" class="text-success">J'accepte les conditions d'utilisation</a>
+              </label>
+            </div>
+            @error('conditions') <small class="text-danger">{{ $message }}</small>@enderror
+          </div>
+
+        </div>
+
+        <div class="text-center row mb-3 d-flex justify-content-center">
+
+
+            <div class="form-group">
+
+                {!! NoCaptcha::renderJs() !!}
+                {!! NoCaptcha::display() !!}
+                @error('g-recaptcha-response')
+                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                @enderror
+            </div>
+
+
+        </div>
+
+
+
+
+        <button class="btn btn-success w-100" type="submit">S'INSCRIRE</button>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+<script>
+    var radio = document.getElementById('s_privee');
+
+    radio.addEventListener('change',function(event){
+
+        if(event.target.value=="s_privee"){
+            document.getElementById('condition').classList.remove('d-none');
+        }
+
+
+    });
+
+    document.getElementById('s_public').addEventListener('change',function(event){
+        if(event.target.value=="s_public"){
+            document.getElementById('condition').classList.add('d-none');
+        }
+    });
+</script>
+
+@endsection
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+brouillon new consultant 
+//////////////////////////////
+
+@extends('layouts.app')
+
+@section('add-button')
+
+<li class="nav-item me-3 ">
+    <a class="nav-link fw-1 btn btn-secondary text-white" href="{{ route('login') }}">CONNEXION</a>
+  </li>
+    
+@endsection
+
+
+@section('content')
+
+<div class="container w-60 p-3">
+    
+  <div class="card ">
+    <div class="card-header p-2 bg-secondary text-white">
+     
+    </div>
+
+
+
+    <div class="card-body p-5">
+
+      <div class="text-center">
+        <h3 class="text-center ">INSCRIPTION</h3>
+      <small class="text-center text-success">Vous vous inscrivez en tant que consultant individuel</small>
+      </div>
+
+      <form action="{{ route('register')}}" method="post" class="mx-auto">
+
+        @csrf
+
+        <input type="hidden" name="res" value=1>
+
+        <div class="row mb-3">
+          <div class="col-12">
+                  <label for="name" class="form-label">Nom et prenoms</label>
+                  <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name')}}">
+                  @error('name') <small class="text-danger">{{ $message }}</small>@enderror
+
+          </div>
+        </div>
+
+        <div class="row mb-3">
+         
+
+          <div class="col-md-6 col-sm-12">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email')}}">
+            @error('email') <small class="text-danger">{{ $message }}</small>@enderror
+          </div>
+
+          <div class="col-md-6 col-sm-12">
+            <label for="tel" class="form-label">Numero de telephone</label>
+            <input type="text" name="tel" id="tel" class="form-control @error('tel') is-invalid @enderror" value="{{ old('tel')}}">
+            @error('tel') <small class="text-danger">{{ $message }}</small>@enderror
+          </div>
+        </div>
+        
+        
+        <div class="row mb-3">
+          <div class="col-md-6 col-sm-12">
+                  <label for="password" class="form-label">Mot de passe</label>
+                  <input type="password" name="password" id="password" class="form-control @error('password') is-invalid @enderror" value="{{ old('password')}}">
+                  @error('password') <small class="text-danger">{{ $message }}</small>@enderror
+                </div>
+
+          <div class="col-md-6 col-sm-12">
+            <label for="pass" class="form-label">Confirmer le mot de passe </label>
+            <input type="password" name="password_confirmation" id="pass" class="form-control @error('confirmation') is-invalid @enderror" value="{{ old('password_confirmation')}}">
+            @error('password_confirmation') <small class="text-danger">{{ $message }}</small>@enderror
+
+          </div>
+        </div>
+
+       
+
+        <div class="row mb-3">
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input @error('conditions') is-invalid @enderror" type="checkbox" id="flexCheckDefault" name="conditions">
+              <label class="form-check-label" for="flexCheckDefault">
+                <a href="#" class="text-success">J'accepte les conditions d'utilisation</a>
+              </label>
+            </div>
+            @error('conditions') <small class="text-danger">{{ $message }}</small>@enderror
+          </div>
+          
+        </div>
+
+        <div class="text-center row mb-3 d-flex justify-content-center">
+
+          {{-- <div class="g-recaptcha " data-sitekey="{{ env('GOOGLE_RECAPTCHA_KEY')}}"></div> --}}
+
+          <div class="form-group">
+          
+              {!! NoCaptcha::renderJs() !!}
+              {!! NoCaptcha::display() !!}
+              @error('g-recaptcha-response')
+                  <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+              @enderror
+          </div>
+      </div>
+
+
+        <button class="btn btn-success w-100">S'INSCRIRE</button>
+      </form>
+    </div>
+  </div>
+  
+</div>
+    
+@endsection
+
+/////////////////template ///////////////////////////////
+
+
+@extends('layouts.app')
+
+@section('content')
+
+<div class="container w-md-50 p-3 my-lg-5 mb-md-6">
+   <h3 class="text-center">INSCRIPTION</h3>
+   <p class="text-center">Veuillez vous inscrire en fonction de votre categorie</p>
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    <div class="col">
+      <div class="card">
+      <div class="card-header bg-secondary p-1"></div>
+      <div class="card-body text-center p-lg-3">
+        <h3><i class="fa fa-user fa-5x" aria-hidden="true"></i></h3>
+        <p class="">Consultant Individuel</p>
+        <a href="{{ route('register_consultant')}}"><button class="btn w-100  btn-success">Cliquez ici</button></a>    
+       </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+       <div class="card-header bg-secondary p-1"></div>
+        <div class="card-body text-center p-3 ">
+          <h3><i class="fa fa-building fa-5x" aria-hidden="true"></i></h3>
+          
+          <p class="">Structure publique/privee</p>
+          <a href="{{ route('register_structure')}}"><button class="btn w-100  btn-success">Cliquez ici</button></a>    
+         </div>
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+    
+@endsection
+
+////////////////////////////////////////////////////////////////////////appp ///
+
+ {{-- <div class="container-fluid app-div p-0 d-flex flex-row  ">
+
+
+        <div class="col-md-5 col-sm-12 p-md-5 bg-success text-white text-center d-flex flex-column align-items-center ">
+            <img src="{{ asset('img/logo.png') }}" alt="" class="img-fluid img-logo" width="100">
+            <p>eMARCHESPUBLICS&PRIVES</p>
+
+            <h3 class="mt-3">GERER PLUS FACILEMENT VOS MARCHES ET VOS SOUMISSIONS </h3>
+            <img src="{{ asset('img/docs.svg') }}" alt="" width="100%" class="mt-3">
+        </div>
+
+        <div class="col-md-7 col-sm-12 p-md-5 text-dark d-flex flex-column align-items-center justify-content-start ">
+
+
+            <div class="col-12 p-md-5 ">
+                <p class="text-secondary h5 fw-bold text-center ">Connexion </p>
+                {{-- <form action="">
+                    <div class="mb-3">
+                        <label for="">Email</label>
+                        <input type="email" name="" id="" class="form-control rounded-pill bg-light" placeholder="Votre adresse email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Mot de passe </label>
+                        <input type="email" name="" id="" class="form-control rounded-pill bg-light" placeholder="Votre mot de passe">
+                    </div>
+
+                    <div class="text-end mb-3 text-danger">
+                        <a href="" class="text-dark">Mot de passe oublié ?</a>
+                    </div>
+
+                    <div class="mb-3">
+                        <button class="btn btn-success w-100 rounded-pill text-white shadow-sm">connexion</button>
+                    </div>
+
+
+                </form>
+                @yield('content')
+            </div>
+
+        </div>
+    </div> --}}
