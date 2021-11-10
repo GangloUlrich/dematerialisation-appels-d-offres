@@ -1,0 +1,256 @@
+@extends('layouts.template')
+@section('content')
+
+
+<div class="container-fluid p-0 position-relative">
+
+
+    <div class="header-div">
+        <p class="text-dark h2">e<span class="text-success">MARCHES</span><span class="text-warning">PUBLICS&</span><span class="text-danger">PRIVES</span></p>
+        <small>Portail de dématérialisation du processus d'appel d'offres des marchés publics et privés  </small>
+    </div>
+
+    <div class="">
+        <div class="owl-carousel owl-loaded carousel1" id="carousel1">
+
+
+            <div class="owl-stage-outer">
+                <div class="owl-stage">
+                    <div class="owl-item"> <img src="{{ asset('img/banner.jpg') }}" alt="" class="carousel-img"></div>
+                    <div class="owl-item"><img src="{{ asset('img/banner2.jpg') }}" alt="" class="carousel-img"></div>
+                    <div class="owl-item"><img src="{{ asset('img/banner3.jpg') }}" alt="" class="carousel-img"></div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+  </div>
+
+
+<div class="container position-relative  mt-2 p-3">
+    <p class="text-center h4 fw-bold">AVIS D'APPEL D'OFFRES </p>
+    <div class="draw-art rounded-pill"></div>
+
+</div>
+
+<div class="container">
+<div class="mt-2 d-flex justify-content-between align-items-center mb-3">
+    <p class="h5">SECTEUR PUBLIC</p>
+    <button class="btn btn-outline-success fw-400 rounded-0">VOIR TOUS</button>
+</div>
+
+<div class="bg-white">
+    <div class="owl-carousel  owl-loaded  owl-theme"  id="carousel2">
+
+
+        <div class="owl-stage-outer bg-white" >
+            <div class="owl-stage" >
+
+                    @isset($documents)
+
+    @foreach ( $documents as $document )
+
+
+    <div class="owl-item bg-white">
+        <div class="card h-100 shadow" style="height: 350px !important; width:95%;">
+          <div class="card-header bg-secondary text-white text-start p-2 rounded-0">
+              <p>{{ $document->marche()->first()->user()->first()->name }}</p>
+          </div>
+          <div class="card-body">
+
+              <p class="card-text text-justify d-block text-start "> {{ $document->marche()->first()->intitule }}</p>
+
+            <div class="row mt-2 d-flex justify-content-center">
+
+              <div class=" col-6  text-center">
+                  <p class="fw-bolder">Ref</p>
+                  <small class="text-center">{{ $document->reference }}</small>
+              </div>
+
+              <div class="col-6 text-center">
+                  <p class="fw-bolder">Date limite de depôt</p>
+                  <small class="text-center">{{ $document->date_limite}}</small>
+              </div>
+
+          </div>
+          </div>
+          <div class="card-footer p-0"><a href="{{ route('avis') }}"><button class=" w-100 btn btn-success rounded-0">Consulter</button></a>
+        </div>
+        </div>
+    </div>
+
+
+
+      @endforeach
+    @endisset
+
+            </div>
+
+
+
+        </div>
+</div>
+
+
+
+</div>
+
+
+<div class="container-fluid p-3 bg-gray mt-lg-4">
+<div class="container">
+<div class="mt-2 d-flex justify-content-between align-items-center">
+    <h4>SECTEUR PRIVE</h4>
+    <button class="btn btn-secondary">VOIR TOUS</button>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4 mt-2">
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-header bg-secondary text-white">
+            <p>NOM DE LA STRUCTURE</p>
+        </div>
+        <div class="card-body">
+
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+          <div class="row mt-2 ">
+
+                        <div class=" col-6 ">
+                            <p class="fw-bolder">Ref</p>
+                            <small class="text-center">TA_USE_78545</small>
+                        </div>
+
+                        <div class="col-6">
+                            <p class="fw-bolder">Date limite de depôt</p>
+                            <small class="text-center">10-06-2021 à 10H</small>
+                        </div>
+
+            </div>
+
+
+        </div>
+        <div class="card-footer p-0"> <button class=" w-100 btn btn-success">CONSULTER</button></div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-header bg-secondary text-white">
+            <p>NOM DE LA STRUCTURE</p>
+        </div>
+        <div class="card-body">
+
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <div class="row mt-2 ">
+
+            <div class=" col-6 ">
+                <p class="fw-bolder">Ref</p>
+                <small class="text-center">TA_USE_78545</small>
+            </div>
+
+            <div class="col-6">
+                <p class="fw-bolder">Date limite de depôt</p>
+                <small class="text-center">10-06-2021 à 10H</small>
+            </div>
+
+            </div>
+        </div>
+        <div class="card-footer p-0"> <button class=" w-100 btn btn-success">CONSULTER</button></div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-header bg-secondary text-white">
+            <p>NOM DE LA STRUCTURE</p>
+        </div>
+        <div class="card-body">
+
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+          <div class="row mt-2 ">
+
+            <div class=" col-6 ">
+                <p class="fw-bolder">Ref</p>
+                <small class="text-center">TA_USE_78545</small>
+            </div>
+
+            <div class="col-6">
+                <p class="fw-bolder">Date limite de depôt</p>
+                <small class="text-center">10-06-2021 à 10H</small>
+            </div>
+
+</div>
+        </div>
+        <div class="card-footer p-0"> <button class=" w-100 btn btn-success">CONSULTER</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+<div class="container-fluid mt-lg-4 px-0 ">
+ <h3 class="text-center">PROCES-VERBAUX</h3>
+
+ <div class="container mt-lg-3">
+    <div class="row row-cols-1 row-cols-md-3 g-4 st ">
+        <div class="col">
+          <div class="card bg-secondary border-0 text-white rounded-0">
+
+            <div class="card-body text-center d-flex flex-column">
+              <h5 class="card-title">PROCES-VERBAL</h5>
+              <h5 class="card-title">D'ATTRIBUTION </h5>
+              <h5 class="card-title">PROVISOIRE</h5>
+
+              </div>
+            <div class="card-footer border-0 bg-secondary text-center"> <button class="btn btn-light w-100">CONSULTER</button></div>
+          </div>
+        </div>
+        <div class="col">
+            <div class="card bg-secondary border-0 text-white rounded-0">
+
+                <div class="card-body text-center d-flex flex-column">
+                  <h5 class="card-title">PROCES-VERBAL</h5>
+                  <h5 class="card-title">D'ATTRIBUTION </h5>
+                  <h5 class="card-title">DEFINITIVE</h5>
+
+                  </div>
+                <div class="card-footer border-0 bg-secondary text-center "> <button class="btn btn-light w-100">CONSULTER</button></div>
+              </div>
+        </div>
+        <div class="col ">
+            <div class="card bg-secondary border-0 text-white rounded-0">
+
+                <div class="card-body text-center d-flex flex-column mt-1">
+                  <h5 class="card-title">PROCES-VERBAL</h5>
+                  <h5 class="card-title">D'OUVERTURE </h5>
+
+
+                  </div>
+                <div class="card-footer  border-0 bg-secondary text-center mt-4"> <button class="btn btn-light w-100">CONSULTER</button></div>
+              </div>
+        </div>
+
+      </div>
+ </div>
+
+ <div class="w-100 bg-success st-div  "> </div>
+</div>
+
+
+
+<div class="container px-5 py-3 mb-3 text-center">
+
+       <h4 class="text-success">Numéro vert</h4>
+        <p>Pour toutes vos preoccupations relatives à la plateforme ,n'hesitez pas à contacter ce numero.</p>
+        <button class="btn btn-lg btn-success rounded-0"><i class="fa fa-phone fa-1x"></i> 81 01 01 01 </button>
+
+</div>
+</div>
+
+@endsection

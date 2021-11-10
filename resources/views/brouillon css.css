@@ -1,0 +1,364 @@
+/* :root {
+    --green: #299A75;
+    --gray: #6c757d;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    color: #525D6A !important;
+}
+
+.font-vp-bold {
+    font-family: "VerdanaPro-Bold";
+}
+
+.font-vp-semibold {
+    font-family: "VerdanaPro-SemiBold";
+}
+
+.font-vp-regular {
+    font-family: "VerdanaPro-Regular";
+}
+
+.font-vp-italic {
+    font-family: "VerdanaPro-Italic";
+}
+
+button,
+p,
+small,
+strong,
+input,
+label {
+    font-family: "VerdanaPro-Regular";
+}
+
+.btn {
+    border-radius: 0px;
+}
+
+h1 {
+    font-size: 38px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+.img-brand {
+    max-width: 60px;
+    height: auto;
+    object-fit: fill;
+}
+
+.text-success {
+    color: var((--green));
+}
+
+.bg-success {
+    background-color: #299A75 !important;
+}
+
+.bgg-success {
+    background: linear-gradient(to bottom left, #299a75 33%, #f6f6f6 116%);
+    ;
+}
+
+.bg-gray {
+    background-color: #f6f6f6;
+}
+
+.bg-gray-dark {
+    background-color: #313f41;
+}
+
+.btn-success {
+    background-color: var(--green);
+    border-color: var(--green);
+}
+
+.btn-success:hover {
+    color: #fff;
+    background-color: var(--green);
+    border-color: var(--green);
+}
+
+.btn-check:focus+.btn-success,
+.btn-success:focus {
+    color: #fff;
+    background-color: var(--green);
+    border-color: var(--green);
+    box-shadow: 0 0 0 0.25rem rgba(60, 153, 110, 0.5);
+}
+
+.btn-light:hover {
+    color: #000;
+    border: 2px solid var(--green);
+}
+
+.st-div {
+    position: relative;
+    bottom: 7.5em;
+    padding: 2rem !important;
+    height: 100px;
+    z-index: -1;
+}
+
+.w-70 {
+    width: 75% !important;
+}
+
+.circle {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+}
+
+.card {
+    border: 0.5px solid rgba(0, 0, 0, 0.125) !important;
+    border-radius: 0px !important;
+}
+
+.card-header {
+    margin: 0px;
+    border-radius: 0px !important;
+}
+
+.draw {
+    height: 5px;
+    width: 100px;
+    padding: 0.10rem !important;
+    border-radius: 50px;
+}
+
+.draw:hover {
+    transform: scaleX(2);
+    transition: transform 5s,
+}
+
+.form-control {
+    border-radius: 0px;
+}
+
+.form-control::placeholder {
+    color: #6c757d;
+    opacity: 1;
+    font-style: italic;
+}
+
+.clip {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 43% !important;
+    padding-left: 7.5rem !important;
+    clip-path: polygon(51% 0, 100% 0, 100% 100%, 15% 100%);
+}
+
+.p-index {
+    z-index: 1;
+}
+
+.mb-custom1 {
+    margin-bottom: 0.40rem !important;
+}
+
+.btn-custom {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.5rem;
+}
+
+.p-11 {
+    padding: 0.7rem !important;
+}
+
+.form-label {
+    font-weight: 600;
+}
+
+.form-check-input:checked[type=checkbox] {
+    background-color: var(--green);
+}
+
+.form-check-input:checked[type=radio] {
+    background-color: var(--green);
+}
+
+
+/* font-weight classes */
+
+.fw-1 {
+    font-weight: 600;
+}
+
+.fw-2 {
+    font-weight: 500;
+}
+
+@media screen and (min-width:768px) {
+    .w-md-50 {
+        width: 60% !important;
+    }
+    .mb-md-6 {
+        margin-bottom: 7rem !important;
+        margin-top: 7rem !important;
+    }
+}
+
+.no-js #loader {
+    display: none;
+}
+
+.js #loader {
+    display: block;
+    position: absolute;
+    left: 100px;
+    top: 0;
+}
+
+
+/* .se-pre-con {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('../img/loader.gif') center no-repeat #299A75;
+} */
+
+.loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.lds-spinner {
+    color: official;
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.lds-spinner div {
+    transform-origin: 40px 40px;
+    animation: lds-spinner 1.2s linear infinite;
+}
+
+.lds-spinner div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 37px;
+    width: 6px;
+    height: 18px;
+    border-radius: 20%;
+    background: #299A75;
+}
+
+.lds-spinner div:nth-child(1) {
+    transform: rotate(0deg);
+    animation-delay: -1.1s;
+}
+
+.lds-spinner div:nth-child(2) {
+    transform: rotate(30deg);
+    animation-delay: -1s;
+}
+
+.lds-spinner div:nth-child(3) {
+    transform: rotate(60deg);
+    animation-delay: -0.9s;
+}
+
+.lds-spinner div:nth-child(4) {
+    transform: rotate(90deg);
+    animation-delay: -0.8s;
+}
+
+.lds-spinner div:nth-child(5) {
+    transform: rotate(120deg);
+    animation-delay: -0.7s;
+}
+
+.lds-spinner div:nth-child(6) {
+    transform: rotate(150deg);
+    animation-delay: -0.6s;
+}
+
+.lds-spinner div:nth-child(7) {
+    transform: rotate(180deg);
+    animation-delay: -0.5s;
+}
+
+.lds-spinner div:nth-child(8) {
+    transform: rotate(210deg);
+    animation-delay: -0.4s;
+}
+
+.lds-spinner div:nth-child(9) {
+    transform: rotate(240deg);
+    animation-delay: -0.3s;
+}
+
+.lds-spinner div:nth-child(10) {
+    transform: rotate(270deg);
+    animation-delay: -0.2s;
+}
+
+.lds-spinner div:nth-child(11) {
+    transform: rotate(300deg);
+    animation-delay: -0.1s;
+}
+
+.lds-spinner div:nth-child(12) {
+    transform: rotate(330deg);
+    animation-delay: 0s;
+}
+
+@keyframes lds-spinner {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.app {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    padding: 0px;
+}
+
+
+/*////////////////////////////version 2////////////////////////*/
+
+.carousel-img {
+    width: 1400px;
+    height: 400px;
+    filter: blur(50%);
+}
+
+*/ //////////////////////
+<img src="{{ asset('img/banner.jpg') }}" alt="" class="carousel-img"><div class="header-div"><p class="text-dark h2">e<span class="text-success">MARCHES</span><span class="text-warning">PUBLICS&</span><span class="text-danger">PRIVES</span></p><small>Portail de dématérialisation du processus d'appel d'offres des marchés publics et privés </small></div>
