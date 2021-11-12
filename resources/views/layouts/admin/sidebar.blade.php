@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-dark-light  elevation-2">
 
     <div class="text-left  p-3">
-        <a href="{{ route('accueil')}}" class="ml-2"><img src="{{Auth::user()->logo_path =='' ? asset('img/logo.png') : asset('img/'.Auth::user()->logo_path) }}" alt="" class="img-fluid"></a>
+        <a href="{{ route('accueil')}}" class="ml-2"><img src="{{Auth::user()->logo_path =='' ? asset('img/logo.png') : asset('img/'.Auth::user()->logo_path) }}" alt="" class="bg-white img-fluid"></a>
     </div>
 
     <!-- Sidebar -->

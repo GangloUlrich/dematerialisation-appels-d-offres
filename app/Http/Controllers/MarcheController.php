@@ -128,7 +128,14 @@ class MarcheController extends Controller
 
         $dao = Document::where(['marche_id'=>$marche->id,'type_document'=>"dao"])->get()->first();
 
-        $retraits = Retrait::where('document_id',$dao->id)->get();
+        if($dao -> id != null ){
+            $retraits = Retrait::where('document_id',$dao->id)->get();
+        }
+        else
+        {
+            $retraits = [];
+        }
+        // 
 
         $soumissions = Soumission::where('marche_id',$marche->id)->get();
 

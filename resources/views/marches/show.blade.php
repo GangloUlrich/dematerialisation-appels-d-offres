@@ -485,7 +485,7 @@
         <div class="tab-pane fade" id="retrait" role="tabpanel" aria-labelledby="retrait-tab">
 
         <div class="d-flex justify-content-between mb-3">
-            <div class="text-size-md text-center text-uppercase">Retraits du DAO ( {{ $retraits->count() }})</div>
+            <div class="text-size-md text-center text-uppercase">Retraits du DAO ( @isset($retraits){{ $retraits->count() }} @endisset)</div>
 
             </div>
 

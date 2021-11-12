@@ -5,7 +5,7 @@
   <img src="{{ asset('img/memo.jpg')}}" alt="" class="banner-img">
   <div class="container banner-content px-5">
     <div class="ps-3 text-center">
-            <small class="text-size-xl text-white fw-600">Plateforme de dématérialisation des dossiers d'appel d'offres </small>
+            <small class="h3 text-white fw-600">Plateforme de dématérialisation des dossiers d'appel d'offres </small>
     </div>
 </div>
 

@@ -10,7 +10,7 @@
   </head>
   <body>
 
-    <div class="container-fluid">
+    <div class="container-fluid  ">
       <div class="row">
         <div class="col-md-12 col-sm-12 col-lg-7 ps-3 pt-2 ps-2 ">
         <div class="text-start d-flex flex-column mt-2">
@@ -23,13 +23,13 @@
                 <div class="fw-bold fm-light text-size-md mb-1">Gerer vos différents marchés</div>
             </div>
             <div class="mt-5 col-10">
-                <img src="{{ asset('img/work.svg') }}" alt="docs svg icone" height="20" class="img-fluid">
+                <img src="{{ asset('img/work.svg') }}" alt="docs svg icone" height="20" class="img-svg">
 
             </div>
             
         </div>
         <div class=" col-md-12 col-sm-12 col-lg-5 d-flex flex-column align-items-center justify-content-center bg-success">
-            <div class="text-center py-5">
+            <div class="text-center py-3">
             <div><i class="fas fa-building h1 text-white"></i></div>
                 <div class="text-size-lg fm-light text-white">Etes-vous une structure publique ,<br> privée ou une organisation ?</div>
                 <div class="text-center">
@@ -39,7 +39,7 @@
                 </div>
             </div>
 
-            <div class="text-center py-5">
+            <div class="text-center py-3">
                 <div><i class="fas fa-user h1 text-white"></i></div>
                 <div class="text-size-lg fm-light text-white"> Etes-vous un consultant individuel ?</div>
                 <div class="text-center">

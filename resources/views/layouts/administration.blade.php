@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Plateforme | Dashboard</title>
+    <title>Plateforme de dematerialisation des dossiers d'appels d'offres</title>
     <meta name="csrf_token" content="{{csrf_token()}}">
 
 

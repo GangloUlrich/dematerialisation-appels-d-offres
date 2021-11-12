@@ -77,19 +77,19 @@
 <div class="container-fluid p-lg-4 bg-white rounded">
     <div class=" col-sm-12">
 
-    <div class="text-size-sm fm-regular fw-bold text-dark   ">Intitule du marché</div>
+    <div class="text-size-md fm-bold fw-bold text-success   ">Intitule du marché</div>
     <div class="text-size-xs text-justify fm-regular fw-bold mb-2">{{ $details->marche()->first()->intitule }}</div>  
 
-    <div class="text-size-sm fm-regular fw-bold text-dark ">Autorité contractante</div>
+    <div class="text-size-md fm-bold fw-bold text-success ">Autorité contractante</div>
     <div class="text-size-xs text-justify fm-regular fw-bold mb-2">{{ $details->marche()->first()->user()->first()->name }}</div>  
 
      
     <div class="text-danger text-size-sm mb-2">Votre offre a été bien enregistrée </div>
 
-    <div class="text-size-sm fm-regular fw-bold text-dark  ">Date ouverture des offres </div>
+    <div class="text-size-md fm-bold fw-bold text-success  ">Date ouverture des offres </div>
     <div class="text-size-xs text-justify fm-regular fw-bold mb-2">{{ $details->date_ouverture }}</div> 
 
-    <div class="text-size-sm fm-regular fw-bold text-dark  ">Lien de la reunion d'ouverture </div>
+    <div class="text-size-md fm-bold fw-bold text-success  ">Lien de la reunion d'ouverture </div>
     <div class="text-size-xs text-justify fm-regular fw-bold mb-2">{!! $details->meet_link !!}</div> 
 
     <a href="{{ route('dashboard') }}" class="btn btn-secondary btn-sm fm-regular ">Dashboard</a>

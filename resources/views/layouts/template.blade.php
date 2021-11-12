@@ -45,11 +45,11 @@
                   Procès-verbaux
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="{{ route('proces_ouverture') }}">Procès verbal d'ouverture </a></li>
+                  <li><a class="dropdown-item text-size-small" href="{{ route('proces_ouverture') }}">Procès verbal d'ouverture </a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="{{ route('proces_attProvisoire') }}">Procès-verbal d'attribution provisoire</a></li>
+                  <li><a class="dropdown-item text-size-small" href="{{ route('proces_attProvisoire') }}">Procès-verbal d'attribution provisoire</a></li>
 
-                  <li><a class="dropdown-item" href="{{ route('proces_attDefinitive')}}">Procès-verbal d'attribution définitive</a></li>
+                  <li><a class="dropdown-item text-size-small" href="{{ route('proces_attDefinitive')}}">Procès-verbal d'attribution définitive</a></li>
                 </ul>
               </li>
               <li class="nav-item me-0 me-xxl-3">
@@ -112,19 +112,19 @@
                 <p class="text-white text-uppercase fw-bold">Services</p>
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                      <a class="nav-link text-light" aria-current="page" href="javascript:void(0)">Portail des marchés publics</a>
+                      <a class="nav-link text-light text-size-xs" aria-current="page" href="javascript:void(0)">Portail des marchés publics</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link text-light" href="javascript:void(0)">Portail de l'administration publique</a>
+                      <a class="nav-link text-light text-size-xs" href="javascript:void(0)">Portail de l'administration publique</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link text-light" href="javascript:void(0)">Bénin Doing Business</a>
+                      <a class="nav-link text-light text-size-xs" href="javascript:void(0)">Bénin Doing Business</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="javascript:void(0)">Jurisprudence Bénin</a>
+                        <a class="nav-link text-light text-size-xs" href="javascript:void(0)">Jurisprudence Bénin</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link text-light" href="javascript:void(0)">Tribunal du commerce</a>
+                        <a class="nav-link text-light text-size-xs" href="javascript:void(0)">Tribunal du commerce</a>
                       </li>
 
                   </ul>
@@ -136,19 +136,19 @@
 
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="javascript:void(0)">Ministere des petites et moyennes entreprises et de la promotion de l'emploi </a>
+                        <a class="nav-link text-light text-size-xs" href="javascript:void(0)">Ministere des petites et moyennes entreprises et de la promotion de l'emploi </a>
                       </li>
                     <li class="nav-item">
-                      <a class="nav-link text-light" aria-current="page" href="javascript:void(0)">Ministère de l'Economie et des Finances </a>
+                      <a class="nav-link text-light text-size-xs" aria-current="page" href="javascript:void(0)">Ministère de l'Economie et des Finances </a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link text-light" href="javascript:void(0)">Ministere de la Justice et de la Législation</a>
+                      <a class="nav-link text-light text-size-xs" href="javascript:void(0)">Ministere de la Justice et de la Législation</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link text-light" href="javascript:void(0)">Ministere du numérique et et de la digitalisation </a>
+                      <a class="nav-link text-light text-size-xs" href="javascript:void(0)">Ministere du numérique et et de la digitalisation </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="javascript:void(0)">Ministère de l'industrie et du commerce </a>
+                        <a class="nav-link text-light text-size-xs" href="javascript:void(0)">Ministère de l'industrie et du commerce </a>
                       </li>
 
 

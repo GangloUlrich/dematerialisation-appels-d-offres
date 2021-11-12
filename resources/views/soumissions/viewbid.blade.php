@@ -125,7 +125,7 @@
 <div class="mt-3">
 
 @if($data->statut != "soumis")
-    <a href="{{ route('finalizeBid',['soumission'=>$data->id ])}}" class="btn btn-danger btn-sm fm-regular">Soumettre l'offre</a>
+    <a href="{{ route('finalizeBid',['soumission'=>$data->id ])}}" class="btn btn-success btn-sm fm-regular">Soumettre l'offre</a>
 @else
 
 <div class="text-danger text-size-sm">L'offre a été soumis le {{ $data->date_soumission }}</div>
