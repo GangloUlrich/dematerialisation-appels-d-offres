@@ -2,10 +2,26 @@
 <html lang="fr">
   <head>
 
-    <title>{{ env('APP_NAME', ' Plateforme') }}</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ env('APP_NAME', ' Plateformee') }}</title>
+    <title>Système de gestion dématérialisée des appels d'offres</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="description" content="Le Systeme de Gestion Dématérialisée des appels d'offres vous permet de consulter les avis , les procès-verbaux.Retirer numériquement vos dossiers d'appels d'offres, de soumissionner et poser vos préoccupations." />
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
+        <meta property="fb:app_id" content="205920604956872" />
+        <meta property="og:url" content="https://sygdao.herokuapp.com/" />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="Système de gestion dématérialisée des appels d'offres" data-dynamic="true" />
+        <meta property="og:description" content="Le Systeme de Gestion Dématérialisée des appels d'offres vous permet de consulter les avis , les procès-verbaux.Retirer numériquement vos dossiers d'appels d'offres, de soumissionner et poser vos préoccupations." data-dynamic="true" />
+        <meta property="og:image" content="https://www.gouv.bj/public/images/armoiries.png" data-dynamic="true" />
+        <meta property="og:image:width" content="256" data-dynamic="true">
+        <meta property="og:image:height" content="256" data-dynamic="true">
+        <meta property="og:locale" content="fr_FR" />
+        <meta property="og:site_name" content="Système de gestion dématérialisée des appels d'offres" />
+        <meta property="twitter:url" content="https://sygdao.herokuapp.com/" />
+        <meta property="twitter:card" content="summary" />
+        <meta property="twitter:title" content="Système de gestion dématérialisée des appels d'offres" />
+        <meta property="twitter:description" content="Le Systeme de Gestion Dématérialisée des appels d'offres vous permet de consulter les avis , les procès-verbaux.Retirer numériquement vos dossiers d'appels d'offres, de soumissionner et poser vos préoccupations." />
+        <meta property="twitter:image" content="https://www.gouv.bj/public/images/armoiries.png" />
     <!-- Bootstrap CSS -->
     <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" >
     <script src="https://kit.fontawesome.com/f38871cf83.js" crossorigin="anonymous"></script>
