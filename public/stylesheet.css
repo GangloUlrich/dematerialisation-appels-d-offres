@@ -1,0 +1,240 @@
+@font-face {
+    font-family: 'Verdana Pro Cond';
+    src: url('VerdanaPro-CondRegular.eot');
+    src: local('Verdana Pro Cond'), local('VerdanaPro-CondRegular'),
+        url('VerdanaPro-CondRegular.eot?#iefix') format('embedded-opentype'),
+        url('VerdanaPro-CondRegular.woff2') format('woff2'),
+        url('VerdanaPro-CondRegular.woff') format('woff'),
+        url('VerdanaPro-CondRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Verdana Pro';
+    src: url('VerdanaPro-Bold.eot');
+    src: local('Verdana Pro Bold'), local('VerdanaPro-Bold'),
+        url('VerdanaPro-Bold.eot?#iefix') format('embedded-opentype'),
+        url('VerdanaPro-Bold.woff2') format('woff2'),
+        url('VerdanaPro-Bold.woff') format('woff'),
+        url('VerdanaPro-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Verdana Pro Cond';
+    src: url('VerdanaPro-CondLight.eot');
+    src: local('Verdana Pro Cond Light'), local('VerdanaPro-CondLight'),
+        url('VerdanaPro-CondLight.eot?#iefix') format('embedded-opentype'),
+        url('VerdanaPro-CondLight.woff2') format('woff2'),
+        url('VerdanaPro-CondLight.woff') format('woff'),
+        url('VerdanaPro-CondLight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Verdana Pro Cond';
+    src: url('VerdanaPro-CondSemiBold.eot');
+    src: local('Verdana Pro Cond SemiBold'), local('VerdanaPro-CondSemiBold'),
+        url('VerdanaPro-CondSemiBold.eot?#iefix') format('embedded-opentype'),
+        url('VerdanaPro-CondSemiBold.woff2') format('woff2'),
+        url('VerdanaPro-CondSemiBold.woff') format('woff'),
+        url('VerdanaPro-CondSemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Verdana Pro Cond';
+    src: url('VerdanaPro-CondBold.eot');
+    src: local('Verdana Pro Cond Bold'), local('VerdanaPro-CondBold'),
+        url('VerdanaPro-CondBold.eot?#iefix') format('embedded-opentype'),
+        url('VerdanaPro-CondBold.woff2') format('woff2'),
+        url('VerdanaPro-CondBold.woff') format('woff'),
+        url('VerdanaPro-CondBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Verdana Pro';
+    src: url('VerdanaPro-BlackItalic.eot');
+    src: local('Verdana Pro Black Italic'), local('VerdanaPro-BlackItalic'),
+        url('VerdanaPro-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('VerdanaPro-BlackItalic.woff2') format('woff2'),
+        url('VerdanaPro-BlackItalic.woff') format('woff'),
+        url('VerdanaPro-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Verdana Pro';
+    src: url('VerdanaPro-Regular.eot');
+    src: local('Verdana Pro'), local('VerdanaPro-Regular'),
+        url('VerdanaPro-Regular.eot?#iefix') format('embedded-opentype'),
+        url('VerdanaPro-Regular.woff2') format('woff2'),
+        url('VerdanaPro-Regular.woff') format('woff'),
+        url('VerdanaPro-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Verdana Pro';
+    src: url('VerdanaPro-LightItalic.eot');
+    src: local('Verdana Pro Light Italic'), local('VerdanaPro-LightItalic'),
+        url('VerdanaPro-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('VerdanaPro-LightItalic.woff2') format('woff2'),
+        url('VerdanaPro-LightItalic.woff') format('woff'),
+        url('VerdanaPro-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Verdana Pro Cond';
+    src: url('VerdanaPro-CondSemiBoldItalic.eot');
+    src: local('Verdana Pro Cond SemiBold Italic'), local('VerdanaPro-CondSemiBoldItalic'),
+        url('VerdanaPro-CondSemiBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('VerdanaPro-CondSemiBoldItalic.woff2') format('woff2'),
+        url('VerdanaPro-CondSemiBoldItalic.woff') format('woff'),
+        url('VerdanaPro-CondSemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Verdana Pro';
+    src: url('VerdanaPro-SemiBoldItalic.eot');
+    src: local('Verdana Pro SemiBold Italic'), local('VerdanaPro-SemiBoldItalic'),
+        url('VerdanaPro-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('VerdanaPro-SemiBoldItalic.woff2') format('woff2'),
+        url('VerdanaPro-SemiBoldItalic.woff') format('woff'),
+        url('VerdanaPro-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Verdana Pro Cond';
+    src: url('VerdanaPro-CondBoldItalic.eot');
+    src: local('Verdana Pro Cond Bold Italic'), local('VerdanaPro-CondBoldItalic'),
+        url('VerdanaPro-CondBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('VerdanaPro-CondBoldItalic.woff2') format('woff2'),
+        url('VerdanaPro-CondBoldItalic.woff') format('woff'),
+        url('VerdanaPro-CondBoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Verdana Pro';
+    src: url('VerdanaPro-BoldItalic.eot');
+    src: local('Verdana Pro Bold Italic'), local('VerdanaPro-BoldItalic'),
+        url('VerdanaPro-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('VerdanaPro-BoldItalic.woff2') format('woff2'),
+        url('VerdanaPro-BoldItalic.woff') format('woff'),
+        url('VerdanaPro-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Verdana Pro Cond';
+    src: url('VerdanaPro-CondLightItalic.eot');
+    src: local('Verdana Pro Cond Light Italic'), local('VerdanaPro-CondLightItalic'),
+        url('VerdanaPro-CondLightItalic.eot?#iefix') format('embedded-opentype'),
+        url('VerdanaPro-CondLightItalic.woff2') format('woff2'),
+        url('VerdanaPro-CondLightItalic.woff') format('woff'),
+        url('VerdanaPro-CondLightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Verdana Pro';
+    src: url('VerdanaPro-Black.eot');
+    src: local('Verdana Pro Black'), local('VerdanaPro-Black'),
+        url('VerdanaPro-Black.eot?#iefix') format('embedded-opentype'),
+        url('VerdanaPro-Black.woff2') format('woff2'),
+        url('VerdanaPro-Black.woff') format('woff'),
+        url('VerdanaPro-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Verdana Pro';
+    src: url('VerdanaPro-Light.eot');
+    src: local('Verdana Pro Light'), local('VerdanaPro-Light'),
+        url('VerdanaPro-Light.eot?#iefix') format('embedded-opentype'),
+        url('VerdanaPro-Light.woff2') format('woff2'),
+        url('VerdanaPro-Light.woff') format('woff'),
+        url('VerdanaPro-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Verdana Pro';
+    src: url('VerdanaPro-Italic.eot');
+    src: local('Verdana Pro Italic'), local('VerdanaPro-Italic'),
+        url('VerdanaPro-Italic.eot?#iefix') format('embedded-opentype'),
+        url('VerdanaPro-Italic.woff2') format('woff2'),
+        url('VerdanaPro-Italic.woff') format('woff'),
+        url('VerdanaPro-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Verdana Pro Cond';
+    src: url('VerdanaPro-CondItalic.eot');
+    src: local('Verdana Pro Cond Italic'), local('VerdanaPro-CondItalic'),
+        url('VerdanaPro-CondItalic.eot?#iefix') format('embedded-opentype'),
+        url('VerdanaPro-CondItalic.woff2') format('woff2'),
+        url('VerdanaPro-CondItalic.woff') format('woff'),
+        url('VerdanaPro-CondItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Verdana Pro Cond';
+    src: url('VerdanaPro-CondBlackItalic.eot');
+    src: local('Verdana Pro Cond Black Italic'), local('VerdanaPro-CondBlackItalic'),
+        url('VerdanaPro-CondBlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('VerdanaPro-CondBlackItalic.woff2') format('woff2'),
+        url('VerdanaPro-CondBlackItalic.woff') format('woff'),
+        url('VerdanaPro-CondBlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Verdana Pro Cond';
+    src: url('VerdanaPro-CondBlack.eot');
+    src: local('Verdana Pro Cond Black'), local('VerdanaPro-CondBlack'),
+        url('VerdanaPro-CondBlack.eot?#iefix') format('embedded-opentype'),
+        url('VerdanaPro-CondBlack.woff2') format('woff2'),
+        url('VerdanaPro-CondBlack.woff') format('woff'),
+        url('VerdanaPro-CondBlack.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Verdana Pro';
+    src: url('VerdanaPro-SemiBold.eot');
+    src: local('Verdana Pro SemiBold'), local('VerdanaPro-SemiBold'),
+        url('VerdanaPro-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('VerdanaPro-SemiBold.woff2') format('woff2'),
+        url('VerdanaPro-SemiBold.woff') format('woff'),
+        url('VerdanaPro-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
