@@ -1,11 +1,12 @@
 :root {
-    --green: #299A75;
-    --yellow: #e2b13C;
+    /* --green: #299A75;
+     */
+     --green: #198754;
      --gray: #6c757d;
 }
  body {
      font-family: "Montserratregular", sans-serif;
-     font-size: 14px !important;
+     font-size: 16px !important;
      color:#212121 !important;
 }
 
@@ -58,16 +59,6 @@
     font-family: "Montserratmedium", sans-serif;
 }
 
-
-/* buttons */
-
-.e-btn-success{
-
-}
-
-.e-btn-success:hover{
-
-}
 /* font-size */
 
 .text-size-small{
@@ -169,9 +160,6 @@
     color: var((--green));
 }
 
-.e-text-warning{
-    color: var(--yellow) !important;
-}
 /* images */
 
 .img-brand {
@@ -191,16 +179,6 @@
 .banner-img{
 
 
-}
-
-.circle-app{
-    height: 5rem;
-    width:5rem;
-    border-radius: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
 }
 
 .barnner-div {
@@ -481,18 +459,3 @@
 .e-text-success{
     color : #299A75 !important;
 }
-
-
-input::placeholder{
-    font-size: 12px;
-    font-weight: 200;
-    font-style: italic;
-    font-family: "Montserratlight", sans-serif;
-}
-
-div .img-app{
-   height: auto;
-   width: 50px;
-   margin-left: 0px;
-}
-

@@ -1,133 +1,3 @@
-:root {
-    --green: #299A75;
-    --gray: #6c757d;
-    --yellow: #f7d852;
-}
-
-:root {
-    --green: #299A75;
-    --yellow: #e2b13C;
-     --gray: #6c757d;
-}
- body {
-     font-family: "Montserratregular", sans-serif;
-     font-size: 14px !important;
-     color:#212121 !important;
-}
-
-/* fonts */
-
-@font-face {
-    font-family: "Montserratbold";
-    src: url("../fonts/Montserrat-Bold.ttf") format("opentype");
-    font-display: swap;
-}
-@font-face {
-    font-family: "Montserratlight";
-    src: url("../fonts/Montserrat-Light.ttf") format("opentype");
-    font-display: swap;
-}
-@font-face {
-    font-family: "Montserratmedium";
-    src: url("../fonts/Montserrat-Medium.ttf") format("opentype");
-    font-display: swap;
-}
-@font-face {
-    font-family: "Montserratregular";
-    src: url("../fonts/Montserrat-Regular.ttf") format("opentype");
-    font-display: swap;
-}
-@font-face {
-    font-family: "Montserratsemibold";
-    src: url("../fonts/Montserrat-SemiBold.ttf") format("opentype");
-    font-display: swap;
-}
-
-
-.fm-regular {
-    font-family: "Montserratregular", sans-serif;
-}
-
-.fm-bold {
-    font-family: "Montserratbold", sans-serif;
-}
-
-.fm-semibold {
-    font-family: "Montserratsemibold", sans-serif;
-}
-
-.fm-light {
-    font-family: "Montserratlight", sans-serif;
-}
-
-.fm-medium {
-    font-family: "Montserratmedium", sans-serif;
-}
-
-
-/* buttons */
-
-.e-btn-success{
-
-}
-
-.e-btn-success:hover{
-
-}
-/* font-size */
-
-.text-size-small{
-    font-size: 12px !important;
-}
-.text-size-xs{
-    font-size: 14px !important;
-}
-
-.text-size-sm{
-    font-size: 1rem !important;
-}
-
-.text-size-md{
-    font-size:18px !important
-}
-
-.text-size-lg{
-    font-size: 20px !important;
-}
-
-.text-size-xl{
-    font-size: 22px !important;
-}
-
-.text-size-xxl{
-    font-size: 24px !important;
-}
-
-.text-size-extra{
-    font-size:28px !important;
-}
-
-.title-size{
-    font-size: 35px;;
-}
-
-/* Font-weight */
-
-.fw-200 {
-    /* light */
-    font-weight: 200 !important;
-}
-
-.fw-400 {
-    /* normal */
-    font-weight: 400 !important;
-}
-
-.fw-600 {
-    /* bold */
-    font-weight: 600 !important;
-}
-
 .navbar-dark {
     background-color: #6c757d;
 }
@@ -258,8 +128,11 @@
 
 .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link.active {
-    color: #fff !important;
-    background-color: var(--green) !important;
+    color: var(--green) !important;
+}
+
+.nav-tabs {
+    font-size: 16px !important;
 }
 
 
@@ -330,64 +203,6 @@
     height: auto;
 }
 
-.pre-loader {
-    background: #299A75;
-    background-position: center center;
-    background-size: 13%;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 12000;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-}
-
-.pre-loader .loader-logo {
-    padding-bottom: 15px;
-    z-index: 15000;
-}
-
-.pre-loader .loader-progress {
-    height: 8px;
-    border-radius: 15px;
-    max-width: 200px;
-    margin: 0 auto;
-    display: block;
-    background: #fff;
-    overflow: hidden
-}
-
-.pre-loader .bar {
-    width: 0%;
-    height: 10px;
-    display: block;
-    background: #f7db0c;
-}
-
-.pre-loader .percent {
-    text-align: center;
-    font-size: 24px;
-    display: none
-}
-
-.pre-loader .loading-text {
-    text-align: center;
-    font-size: 18px;
-    font-weight: 500;
-    padding-top: 15px
-}
-
 .rounded-div {
     border-radius: 1rem;
 }
@@ -396,12 +211,170 @@
     margin-bottom: 0px;
 }
 
-@media (min-width: 576px){
-.modal-marche {
-    max-width: 400px;
-}
+.no-js #loader {
+    display: none;
 }
 
-.w-65{
-    width:  65% !important;
+.js #loader {
+    display: block;
+    position: absolute;
+    left: 100px;
+    top: 0;
+}
+
+.loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.lds-spinner {
+    color: official;
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.lds-spinner div {
+    transform-origin: 40px 40px;
+    animation: lds-spinner 1.2s linear infinite;
+}
+
+.lds-spinner div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 37px;
+    width: 6px;
+    height: 18px;
+    border-radius: 20%;
+    background: #299A75;
+}
+
+.lds-spinner div:nth-child(1) {
+    transform: rotate(0deg);
+    animation-delay: -1.1s;
+}
+
+.lds-spinner div:nth-child(2) {
+    transform: rotate(30deg);
+    animation-delay: -1s;
+}
+
+.lds-spinner div:nth-child(3) {
+    transform: rotate(60deg);
+    animation-delay: -0.9s;
+}
+
+.lds-spinner div:nth-child(4) {
+    transform: rotate(90deg);
+    animation-delay: -0.8s;
+}
+
+.lds-spinner div:nth-child(5) {
+    transform: rotate(120deg);
+    animation-delay: -0.7s;
+}
+
+.lds-spinner div:nth-child(6) {
+    transform: rotate(150deg);
+    animation-delay: -0.6s;
+}
+
+.lds-spinner div:nth-child(7) {
+    transform: rotate(180deg);
+    animation-delay: -0.5s;
+}
+
+.lds-spinner div:nth-child(8) {
+    transform: rotate(210deg);
+    animation-delay: -0.4s;
+}
+
+.lds-spinner div:nth-child(9) {
+    transform: rotate(240deg);
+    animation-delay: -0.3s;
+}
+
+.lds-spinner div:nth-child(10) {
+    transform: rotate(270deg);
+    animation-delay: -0.2s;
+}
+
+.lds-spinner div:nth-child(11) {
+    transform: rotate(300deg);
+    animation-delay: -0.1s;
+}
+
+.lds-spinner div:nth-child(12) {
+    transform: rotate(330deg);
+    animation-delay: 0s;
+}
+
+@keyframes lds-spinner {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/*////////////////////////////////////////Version 2 ///////////////////////////*/
+
+:root {
+    --green: #299A75;
+    --gray: #6c757d;
+    --yellow: #f7d852;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px !important;
+}
+
+h5,
+.h5 {
+    font-size: 14px !important;
+}
+
+h3,
+.h3 {
+    font-size: 16px !important;
+}
+
+.btn {
+    font-size: 14px !important;
+}
+
+label {
+    font-size: 12px !important;
+}
+
+table {
+    font-size: 14px;
+}
+
+table th {
+    font-weight: 400;
+}
+
+.text-size-md {
+    font-size: 16px;
+}
+
+.f-400 {
+    font-weight: 500;
 }
