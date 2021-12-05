@@ -18,7 +18,7 @@ class CreateNotesTable extends Migration
             $table->integer('note_attribue');
             $table->unsignedBigInteger('soumission_id');
             $table->unsignedBigInteger('critere_id');
-            $table->foreign('soumission_id')->references('id')->on('soumisssions');
+            $table->foreign('soumission_id')->references('id')->on('soumissions');
             $table->foreign('critere_id')->references('id')->on('criteres');
             $table->timestamps();
         });
