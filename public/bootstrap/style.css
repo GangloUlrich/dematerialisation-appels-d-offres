@@ -181,6 +181,11 @@
 
 }
 
+.card-struct{
+  
+    height: 150px;
+}
+
 .barnner-div {
     /* display: inline-block; */
     overflow: hidden;
