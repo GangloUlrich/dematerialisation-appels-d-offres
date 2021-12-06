@@ -45,7 +45,12 @@
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <a class="navbar-brand" href="javascript:void(0)"><img src="{{ asset('img/logo.png') }}" class="img-brand" alt=""></a>
+          <a class="navbar-brand" href="{{ route('accueil')}}">
+            <div class="d-flex align-items-center justify-content-center">
+            <img src="{{ asset('img/logo.png') }}" class="img-brand" alt="">
+            <div class="fm-regular text-size-xs">SYSTEME DE GESTION DEMATERIALISEE <br> DES APPELS D'OFFRES</div>
+            </div>  
+            </a>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
             <ul class="navbar-nav mx-auto p-2 text-uppercase">
@@ -121,8 +126,11 @@
 
         <div class="container d-flex justify-content-evenly p-4 border-bottom  border-light">
             <div class="col-4 p-2 text-start">
-                <img src="{{ asset('img/logo.png') }}" class="img-brand2" alt="">
-                <p class="text-light h5 ">&copy;eMARCHESPUBLICS&PRIVES</p>
+              <div class="d-flex justify-content-center flex-column align-items-center">
+              <img src="{{ asset('img/logo.png') }}" class="img-brand2" alt="">
+                <p class="text-light h5 text-center ">&copy;SYGDAO</p>
+              </div>
+                
             </div>
             <div class="col-4 p-2 text-center">
                 <p class="text-white text-uppercase fw-bold">Services</p>
@@ -174,7 +182,7 @@
             </div>
         </div>
          <div class="row  text-center p-2 text-light">
-             <small>&copy;Copyright 2021 e Marches publics et privés | Tous droits reservés.</small>
+             <small>&copy;Copyright 2021 SYGDAO | Tous droits reservés.</small>
          </div>
      </div>
 

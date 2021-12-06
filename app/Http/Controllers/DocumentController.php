@@ -209,10 +209,10 @@ class DocumentController extends Controller
     }
 
     public function meeting_store (Request $request){
-
+        
 
         $request->validate([
-            'lien'      => 'required',
+            'lien'  => 'required',
         ]);
 
         $link=Document::where(['marche_id'=> $request->marche, 'type_document'=> 'aao'])->update(['meet_link'=> $request->lien]);

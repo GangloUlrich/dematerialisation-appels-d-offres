@@ -263,9 +263,26 @@
                         </button>
                         </div>
                         <div class="modal-body d-flex flex-column">
+
+                        @if($daoAdd ==false)
                             <a href="{{ route('create_dao',['marche'=>$marche->id]) }}" class="text-success mb-2"><i class="fa fa-plus-circle"></i>&nbsp;Ajouter un dossier d'appel d'offres</a>
-                            <a href="{{ route('create_aao',['marche' =>$marche->id]) }}" class="text-warning mb-2"><i class="fa fa-plus-circle"></i>&nbsp;Ajouter un avis d'appel d'offres</a>
+                         @endif
+
+                       
+                            @if($daoAdd == true && $bothDocAdd==false)
+                            
+
+                                @if(sizeof($criteres)> 0 && sizeof($pieces)> 0)
+                                <a href="{{ route('create_aao',['marche' =>$marche->id]) }}" class="text-warning mb-2"><i class="fa fa-plus-circle"></i>&nbsp;Ajouter un avis d'appel d'offres</a>
+                                @else 
+                                <span class="text-danger fm-regular text-size-xs">Veuillez renseigner les criteres , les pieces avant de lancer l'avis d'appel à concurrence</span>
+                                @endif
+
+                            @endif
+
+                            @if($bothDocAdd==true)
                             <a href="javascript:void(0)" class="text-primary mb-2"><i class="fa fa-plus-circle"></i>&nbsp;Ajouter un procès verbal</a>
+                            @endif
                         </div>
 
                     </div>
@@ -485,7 +502,7 @@
         <div class="tab-pane fade" id="retrait" role="tabpanel" aria-labelledby="retrait-tab">
 
         <div class="d-flex justify-content-between mb-3">
-            <div class="text-size-md text-center text-uppercase">Retraits du DAO ( @isset($retraits){{ $retraits->count() }} @endisset)</div>
+            <div class="text-size-md text-center text-uppercase">Retraits du DAO ( @isset($retraits){{ sizeof($retraits) }} @endisset)</div>
 
             </div>
 

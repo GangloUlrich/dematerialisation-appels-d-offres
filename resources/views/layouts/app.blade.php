@@ -11,8 +11,6 @@
      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" >
-    {{--  font awesome icons --}}
-    <link rel="stylesheet" href="{{ asset("bootstrap/font-awesome/css/font-awesome.min.css")}}">
     {{-- custom css --}}
     <link rel="stylesheet" href="{{ asset('bootstrap/style.css')}}">
 
@@ -73,61 +71,12 @@
   </head>
   <body>
 
-    {{-- <div class="loader">
-        <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-        <p>Chargement...</p>
-    </div> --}}
-
-
-    {{-- <div class="container-fluid app-div p-0 d-flex flex-row  ">
-
-
-        <div class="col-md-5 col-sm-12 p-md-5 bg-success text-white text-center d-flex flex-column align-items-center ">
-            <img src="{{ asset('img/logo.png') }}" alt="" class="img-fluid img-logo" width="100">
-            <p>eMARCHESPUBLICS&PRIVES</p>
-
-            <h3 class="mt-3">GERER PLUS FACILEMENT VOS MARCHES ET VOS SOUMISSIONS </h3>
-            <img src="{{ asset('img/docs.svg') }}" alt="" width="100%" class="mt-3">
-        </div>
-
-        <div class="col-md-7 col-sm-12 p-md-5 text-dark d-flex flex-column align-items-center justify-content-start ">
-
-
-            <div class="col-12 p-md-5 ">
-                <p class="text-secondary h5 fw-bold text-center ">Connexion </p>
-                {{-- <form action="">
-                    <div class="mb-3">
-                        <label for="">Email</label>
-                        <input type="email" name="" id="" class="form-control rounded-pill bg-light" placeholder="Votre adresse email">
-                    </div>
-                    <div class="mb-3">
-                        <label for="">Mot de passe </label>
-                        <input type="email" name="" id="" class="form-control rounded-pill bg-light" placeholder="Votre mot de passe">
-                    </div>
-
-                    <div class="text-end mb-3 text-danger">
-                        <a href="" class="text-dark">Mot de passe oublié ?</a>
-                    </div>
-
-                    <div class="mb-3">
-                        <button class="btn btn-success w-100 rounded-pill text-white shadow-sm">connexion</button>
-                    </div>
-
-
-                </form>
-                @yield('content')
-            </div>
-
-        </div>
-    </div> --}}
-
-
     <div class="container-fluid app-div d-flex flex-column flex-lg-row ">
         <div class="col-lg-8 col-md-12 col-sm-12 d-flex flex-column ">
 
-            <div class="text-start d-flex flex-column div-header">
+            <div class="text-start d-flex align-items-center div-header">
                 <a href="{{ route('accueil') }}"><img src="{{ asset('img/logo.png') }}" alt="logo de la plateforme" class="img-logo"></a>
-                <small class="fw-bold">e<span class="text-success">MARCHES</span><span class="text-warning">PUBLICS&</span><span class="text-danger">PRIVES</span></small>
+                <small class="fw-bold">SYGDAO</small>
             </div>
 
             <div class="mt-5 container">

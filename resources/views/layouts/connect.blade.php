@@ -12,7 +12,11 @@
      <link href="{{ asset('fontawesome/all.css') }}" rel="stylesheet" >
     <link rel="stylesheet" href="{{ asset('bootstrap/style.css')}}">
 
-
+  <style>
+     .img-app{
+                width: calc(30px + 2vw);
+            }
+  </style>
 
   </head>
   <body>
@@ -22,7 +26,7 @@
       
         <div class="d-flex align-items-center">
          <a href="{{route('accueil')}}" class="d-block d-flex align-items-center p-0 text-secondary text-decoration-none"><img src="{{ asset('img/logo.png') }}" alt="" class="img-app">
-          <div class="text-size-sm fm-regular">e<span class="text-success">MARCHES</span><span class="text-warning">PUBLICS</span>&<span class="text-danger">PRIVES</span></div> </a>
+          <div class="text-size-xs fm-regular text-dark">SYSTEME DE GESTION DEMATERIALISEE <br> DES APPELS D'OFFRES</div> </a>
         </div>
 
         <div>
@@ -38,7 +42,7 @@
 
 
     <div class="mt-3 text-center bg-light p-5">
-    <small>&copy;Copyright 2021 e Marches publics et privés | Tous droits reservés.</small>
+    <small>&copy;Copyright 2021 SYGDAO | Tous droits reservés.</small>
     </div>
 
     <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}" ></script>

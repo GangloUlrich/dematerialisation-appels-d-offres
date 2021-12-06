@@ -7,15 +7,69 @@
     <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" >
     <link href="{{ asset('fontawesome/all.css') }}" rel="stylesheet" >
     <link rel="stylesheet" href="{{ asset('bootstrap/style.css')}}">
+
+    <style>
+            .app-div{
+                position: absolute;
+                bottom: 0px;
+                top:0px;
+                overflow: hidden;
+                margin: 0px;
+                padding: 5rem;
+
+            }
+
+            .div-header{
+                position:absolute;
+                top:0px;
+                left: 0px;
+                transform: translate(50%, 50%);
+            }
+
+
+            .div-content{
+                position:absolute;
+                top: 100px;
+                bottom: 0px;
+                right: 50px;
+
+            }
+
+            h2{
+                font-size:22px;
+            }
+
+            h1{
+                font-size:24px;
+            }
+
+            .form-label{
+                font-weight: 500 !important;
+            }
+
+
+            .form-control{
+                background-color: rgba(187, 222,251,0.4) !important;
+                border: none;
+                border-radius: 0px !important;
+
+            }
+
+            .img-app{
+                width: calc(30px + 2vw);
+            }
+
+
+    </style>
   </head>
   <body>
 
     <div class="container-fluid  ">
       <div class="row">
         <div class="col-md-12 col-sm-12 col-lg-7 ps-3 pt-2 ps-2 ">
-        <div class="text-start d-flex flex-column mt-2">
+        <div class="text-start d-flex align-items-center mt-2">
                 <a href="{{ route('accueil') }}"><img src="{{ asset('img/logo.png') }}" alt="logo de la plateforme" class="img-app"></a>
-                <small class="fw-bold">e<span class="text-success">MARCHES</span><span class="text-warning">PUBLICS&</span><span class="text-danger">PRIVES</span></small>
+                <small class="fw-bold">SYGDAO</small>
             </div>
             <div class="mt-5">
                 <div class="fw-bold fm-light text-size-md mb-1">Consulter  des avis d'appels d'offres et des procès-verbaux </div>
@@ -23,7 +77,7 @@
                 <div class="fw-bold fm-light text-size-md mb-1">Gerer vos différents marchés</div>
             </div>
             <div class="mt-5 col-10">
-                <img src="{{ asset('img/work.svg') }}" alt="docs svg icone" height="20" class="img-svg">
+                <img src="{{ asset('img/work.svg') }}" alt="docs svg icone"  class="img-fluid">
 
             </div>
             

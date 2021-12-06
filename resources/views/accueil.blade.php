@@ -5,7 +5,7 @@
   <img src="{{ asset('img/memo.jpg')}}" alt="" class="banner-img">
   <div class="container banner-content px-5">
     <div class="ps-3 text-center">
-            <small class="h3 text-white fw-600">Plateforme de dématérialisation des dossiers d'appel d'offres </small>
+            <small class="h3 text-white fw-600">Système de Gestion Dématérialisée des Appels d'Offres </small>
     </div>
 </div>
 
@@ -17,19 +17,19 @@
 <div class="row text-center px-6">
         <div class="col px-2  ">
           <div class="bg-success py-3 text-white fm-medium">
-          Avis d'appels d'offres <strong class="fm-bold" >8</strong>
+          Avis d'appels d'offres <strong class="fm-bold" >@isset($avis) {{ sizeof($avis)}} @endisset</strong>
           </div>
         </div>
 
         <div class="col px-2  ">
           <div class="bg-warning py-3 text-white fm-medium">
-          Procès verbaux types <strong class="fm-bold text-size-MD" >8</strong>
+          Procès verbaux types <strong class="fm-bold text-size-MD" >3</strong>
           </div>
         </div>
 
         <div class="col px-2  ">
           <div class="bg-danger py-3 text-white fm-medium">
-          Dossiers d'appels d'offres <strong class="fm-bold" >8</strong>
+          Dossiers d'appels d'offres <strong class="fm-bold" >@isset($daos) {{ sizeof($daos)}} @endisset</strong>
           </div>
         </div>
 

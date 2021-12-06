@@ -128,14 +128,25 @@ class MarcheController extends Controller
 
         $dao = Document::where(['marche_id'=>$marche->id,'type_document'=>"dao"])->get()->first();
 
-        if($dao -> id != null ){
-            $retraits = Retrait::where('document_id',$dao->id)->get();
+        $daoAdd = true;
+        $bothDocAdd = false;
+
+
+        if($dao== null ){
+            $retraits = [];
+            $daoAdd = false;
         }
         else
         {
-            $retraits = [];
+            $retraits = Retrait::where('document_id',$dao->id)->get();
         }
-        // 
+
+if($aao !=null && $dao !=null){
+    $bothDocAdd = true;
+}
+       
+
+                
 
         $soumissions = Soumission::where('marche_id',$marche->id)->get();
 
@@ -150,7 +161,9 @@ class MarcheController extends Controller
             'stat_critere' => $stat_critere,
             'stat_piece' => $stat_piece,
             'retraits' => $retraits,
-            'soumissions' => $soumissions
+            'soumissions' => $soumissions,
+            'daoAdd' => $daoAdd,
+            'bothDocAdd' => $bothDocAdd
 
         ]);
     }

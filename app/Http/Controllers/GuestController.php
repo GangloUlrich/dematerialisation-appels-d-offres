@@ -8,6 +8,7 @@ use App\Models\Marche;
 use App\Models\Document;
 use App\Models\Avis;
 use App\Models\Retrait;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Response;
 use Carbon\Carbon;
@@ -17,9 +18,20 @@ class GuestController extends Controller
 
     // affichage des avis dans à l'accueil de la page
     public function accueil(){
-        $documents = Document::where('type_document','aao')->get()->take(6)->sortDesc();
-        return view ('accueil',['documents' => $documents]);
 
+
+        $documents = Document::where('type_document','aao')->get()->take(6)->sortDesc();
+        $avis = Document::where('type_document','dao')->get();
+        $daos = Document::where('type_document','dao')->get();
+        return view ('accueil',['documents' => $documents,
+    'daos'=> $daos,
+'avis' => $avis]);
+
+    }
+
+    public function structure(){
+        $users = User::all();
+        return view('structures',["structures" => $users]);
     }
 
 

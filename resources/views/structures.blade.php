@@ -19,126 +19,43 @@
     </div>
 
     <div class="container mb-3">
-        <div class="row row-cols-1 row-cols-md-2 g-4 ">
-            <div class="col">
-                <div class="card">
+        <div class="row row-cols-1 row-cols-md-3 g-4 ">
+
+        @isset($structures)
+        
+        @foreach($structures as $structure)
+        <div class="col">
+                <div class="card card-struct">
                   <div class="card-header bg-secondary text-white">
-                      <p>Nom de la structure</p>
+                      <p>{{$structure ->name}}</p>
                   </div>
                   <div class="card-body">
 
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-7">
                             <strong class="fw-bold">Email</strong>
-                            <p>marches@structure.domaine</p>
+                            <p>{{$structure->email}}</p>
                         </div>
 
-                        <div class="col-6">
+                        <div class="col-5">
                             <strong>Telephone </strong>
-                            <p>(+229) 68 45 45 45 / 21 32 12 25</p>
+                            <p>{{$structure->tel}}</p>
                         </div>
                     </div>
 
-                   <strong>Responsable</strong>
-                   <p>Nom et prenoms</p>
-
+                    @isset($structure->website)
                    <strong>Site web</strong>
+
                    <div class="d-flex flex-row">
-                           <span>https://www.structure.domaine</span><a href=""><button class="ms-2 btn btn-success btn-sm ">Visiter</button></a>                          
+                           <span>{{$structure->website}}</span><a href=""><button class="ms-2 btn btn-success btn-sm ">Visiter</button></a>                          
                    </div>
+                   @endisset
                   </div>
                 </div>
             </div>
-
-            <div class="col">
-                <div class="card">
-                  <div class="card-header bg-secondary text-white">
-                      <p>Nom de la structure</p>
-                  </div>
-                  <div class="card-body">
-
-                    <div class="row">
-                        <div class="col-6">
-                            <strong class="fw-bold">Email</strong>
-                            <p>marches@structure.domaine</p>
-                        </div>
-
-                        <div class="col-6">
-                            <strong>Telephone </strong>
-                            <p>(+229) 68 45 45 45 / 21 32 12 25</p>
-                        </div>
-                    </div>
-
-                   <strong>Responsable</strong>
-                   <p>Nom et prenoms</p>
-
-                   <strong>Site web</strong>
-                   <div class="d-flex flex-row">
-                           <span>https://www.structure.domaine</span><a href=""><button class="ms-2 btn btn-success btn-sm ">Visiter</button></a>                          
-                   </div>
-                  </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card">
-                  <div class="card-header bg-secondary text-white">
-                      <p>Nom de la structure</p>
-                  </div>
-                  <div class="card-body">
-
-                    <div class="row">
-                        <div class="col-6">
-                            <strong class="fw-bold">Email</strong>
-                            <p>marches@structure.domaine</p>
-                        </div>
-
-                        <div class="col-6">
-                            <strong>Telephone </strong>
-                            <p>(+229) 68 45 45 45 / 21 32 12 25</p>
-                        </div>
-                    </div>
-
-                   <strong>Responsable</strong>
-                   <p>Nom et prenoms</p>
-
-                   <strong>Site web</strong>
-                   <div class="d-flex flex-row">
-                           <span>https://www.structure.domaine</span><a href=""><button class="ms-2 btn btn-success btn-sm ">Visiter</button></a>                          
-                   </div>
-                  </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card">
-                  <div class="card-header bg-secondary text-white">
-                      <p>Nom de la structure</p>
-                  </div>
-                  <div class="card-body">
-
-                    <div class="row">
-                        <div class="col-6">
-                            <strong class="fw-bold">Email</strong>
-                            <p>marches@structure.domaine</p>
-                        </div>
-
-                        <div class="col-6">
-                            <strong>Telephone </strong>
-                            <p>(+229) 68 45 45 45 / 21 32 12 25</p>
-                        </div>
-                    </div>
-
-                   <strong>Responsable</strong>
-                   <p>Nom et prenoms</p>
-
-                   <strong>Site web</strong>
-                   <div class="d-flex flex-row">
-                           <span>https://www.structure.domaine</span><a href=""><button class="ms-2 btn btn-success btn-sm ">Visiter</button></a>                          
-                   </div>
-                  </div>
-                </div>
-            </div>
+        @endforeach
+        @endisset
+           
         </div>
     </div>
 

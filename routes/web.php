@@ -28,6 +28,7 @@ use App\Http\Controllers\EvaluationController;
 Route::get("/koi", function(){ return view ('emails.meetmail');});
 Route::get('/',[GuestController::class,'accueil'])->name('accueil');
 Route::get('/avis',[GuestController::class,'avis'])->name('avis');
+Route::get('/structures',[GuestController::class,'structure'])->name('structures');
 Route::get('/avis/more_informations/{marche_id}',[GuestController::class,'moreInfos'])->name('consulter');
 Route::get('/avis/display/{avis}',[GuestController::class,'displayAvis'])->name('display_avis');
 Route::get('/avis/download/{avis}',[GuestController::class,'downloadAvis'])->name('download_avis');
@@ -52,9 +53,6 @@ Route::get('/proces_verbal_ouverture', function () {
 Route::get('/proces_verbal_attribution_definitive', function () {
     return view('pv_definitive');
 })->name('proces_attDefinitive');
-Route::get('/structures', function () {
-    return view('structures');
-})->name('structures');
 Route::get('/inscription/structures/', function () {
     return view('auth.new_structure');
 })->name('register_structure');

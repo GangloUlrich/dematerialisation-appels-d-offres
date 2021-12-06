@@ -88,17 +88,20 @@
 
         <div class="text-center row mb-3 d-flex justify-content-center">
 
-          {{-- <div class="g-recaptcha " data-sitekey="{{ env('GOOGLE_RECAPTCHA_KEY')}}"></div> --}}
 
-          <div class="form-group">
-          
-              {!! NoCaptcha::renderJs() !!}
-              {!! NoCaptcha::display() !!}
-              @error('g-recaptcha-response')
-                  <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-              @enderror
-          </div>
-      </div>
+    <div class="form-group d-flex justify-content-center">
+
+        {!! NoCaptcha::renderJs() !!}
+        {!! NoCaptcha::display() !!}
+        @error('g-recaptcha-response')
+            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+        @enderror
+    </div>
+
+
+</div>
+
+      
 
 
 <div class="text-center">
