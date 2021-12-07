@@ -91,7 +91,13 @@
                                  <a href="{{ route('afficher_document',['document'=>$retrait->document()->first()->id]) }}"  target="_blank" class=" text-secondary me-2 text-size-sm" data-toggle="tooltip" data-placement="top" title="Voir le document"><i class="fa fa-eye text-size-sm"></i></a>
                                 <a href="{{ route('telecharger_document',['document'=>$retrait->document()->first()->id]) }}" target="_blank" class="text-success me-2" data-toggle="tooltip" data-placement="top" title="Telecharger le document"><i class="fa fa-download text-size-sm "></i></a>
                                 <a href="" class="text-danger " data-toggle="tooltip" data-placement="top" title="Questions/reponses"><i class="fa fa-question-circle me-2 text-size-sm"></i></a>
+
+                                @if(limiteS($retrait->document_id))
                                 <a href="{{ route('startBid',['marche'=>$retrait->document()->first()->marche()->first()->id]) }}" class="text-primary " data-toggle="tooltip" data-placement="top" title="Soumettre une offre"><i class="fa fa-paper-plane text-size-sm me-2"></i></a>
+                                @else
+                                <a href="javascript:void(0)" class="text-dark"><i class="fa fa-exclamation-triangle text-size-sm me-2"></i></a>
+                                
+                                @endif
                             </div>
                         </td>
 

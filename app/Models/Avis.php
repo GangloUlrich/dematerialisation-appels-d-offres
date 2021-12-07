@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Avis extends Model
 {
     use HasFactory;
-
+    protected $dates = ['date_limite'];
     protected $fillable = [
         'date_publication',
         'date_limite',

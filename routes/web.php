@@ -29,12 +29,13 @@ Route::get("/koi", function(){ return view ('emails.meetmail');});
 Route::get('/',[GuestController::class,'accueil'])->name('accueil');
 Route::get('/avis',[GuestController::class,'avis'])->name('avis');
 Route::get('/structures',[GuestController::class,'structure'])->name('structures');
-Route::get('/avis/more_informations/{marche_id}',[GuestController::class,'moreInfos'])->name('consulter');
+
 Route::get('/avis/display/{avis}',[GuestController::class,'displayAvis'])->name('display_avis');
 Route::get('/avis/download/{avis}',[GuestController::class,'downloadAvis'])->name('download_avis');
+Route::get('/avis/more_informations/{marche_id}',[GuestController::class,'moreInfos'])->name('consulter');
 
-Route::middleware(['auth'])->group(function () {
-Route::get('/retrait/{user}/dossier-d-appels-d-offres/{dao}',[GuestController::class,'downloadDao'])->name('download_dao');
+Route::middleware(['auth'])->group(function () { 
+Route::get('/retrait/dossier-d-appels-d-offres/{dao}',[GuestController::class,'downloadDao'])->name('download_dao');
 });
 
 

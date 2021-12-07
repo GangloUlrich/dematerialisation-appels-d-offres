@@ -557,9 +557,16 @@
                         <td>{{ $soumission->user()->first()->name }}</td>
                         <td>{{ $soumission->date_soumission }}</td>
                         <td>
-                        <a href="{{ route('ouvertureBid',['soumission' => $soumission ])}}" class="btn btn-sm btn-success"><i class="fa fa-lock"></i> Ouvrir</a>
-                        <a href="{{ route('evaluationBid',['soumission' => $soumission ])}}" class="btn btn-sm btn-danger"><i class="fa fa-lock"></i> Evaluer</a>
-                        </td>
+
+                        @if(ouverture($soumission->marche_id))
+                        <a href="{{ route('ouvertureBid',['soumission' => $soumission ])}}" class="btn btn-sm btn-success"><i class="fa fa-unlock"></i> Ouvrir</a>
+                        <a href="{{ route('evaluationBid',['soumission' => $soumission ])}}" class="btn btn-sm btn-danger"><i class="fa fa-unlock"></i> Evaluer</a>
+                        @else
+                        <a href="javascript:void(0)" class="btn btn-sm btn-success"><i class="fa fa-lock"></i> Ouvrir</a>
+                        <a href="javascript:void(0)" class="btn btn-sm btn-danger"><i class="fa fa-lock"></i> Evaluer</a>
+                        
+                        @endif
+                    </td>
                         
                     </tr>
                 @endforeach

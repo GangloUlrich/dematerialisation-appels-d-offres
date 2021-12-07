@@ -81,7 +81,8 @@ class GuestController extends Controller
 
     // retrait d'un dossier d'appel d'offres
 
-    public function downloadDao ($user,$dao){
+    public function downloadDao ($dao){
+        $user = Auth::user()->id;
         $dossier=Document::find($dao);
 
         if($dossier->marche()->first()->user()->first()->id == $user){

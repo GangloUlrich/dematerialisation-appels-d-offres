@@ -35,11 +35,11 @@
         <div class="row mb-2">
             <div class="col-5">
                 <div class="fw-bolder fm-regular mb-2">Date limite de depôt</div>
-                <div>{{ $more->date_limite }}</div>
+                <div>{{formatdate($more->date_limite) }}</div>
             </div>
             <div class="col-5">
             <div class="fw-bolder fm-regular mb-2">Date d'ouverture des offres</div>
-                <div>{{ $more->date_ouverture }}</div>
+                <div>{{formatdate($more->date_ouverture)}}</div>
             </div>
         </div>
         @endif
@@ -59,11 +59,15 @@
             <div class="me-3">
             <a href="{{ route('download_avis',['avis'=>$more->id]) }}" target="_blank" ><button class="btn btn-sm btn-outline-success"> <i class="fas fa-download"></i> Telecharger</button></a>
             </div>
+        
             @endif
             @if($more->type_document == 'dao')
+
+            @if(limite($more->marche_id))
             <div class="me-3">
-            <a href="{{ route('download_dao',['dao'=>$more->id,'user'=>Auth::user()->id]) }}" target="_blank"><button class="btn btn-sm btn-danger"> <i class="fas fa-link"></i> Retirer le DAO</button></a>
-            </div>
+            <a href="{{ route('download_dao',['dao'=>$more->id]) }}"><button class="btn btn-sm btn-danger"> <i class="fas fa-link"></i> Retirer le DAO</button></a>
+            </div>@endif
+            
             @endif
             @endforeach
         </div>

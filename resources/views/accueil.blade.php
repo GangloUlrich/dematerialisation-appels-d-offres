@@ -23,7 +23,7 @@
 
         <div class="col px-2  ">
           <div class="bg-warning py-3 text-white fm-medium">
-          Procès verbaux types <strong class="fm-bold text-size-MD" >3</strong>
+          Procès-verbaux <strong class="fm-bold text-size-MD" >3</strong>
           </div>
         </div>
 
@@ -53,14 +53,24 @@
 @foreach ( $documents as $document)
                 <div class="col-3 me-3 me-lg-3 me-md-3 me-xl-3">
                     <div class="card position-relative card-hp">
-                        <div class="card-border-div"></div>
+                    @if(compareDate($document->date_limite))
+                        <div class="card-border-div bg-success"></div>
+                    @else
+                    <div class="card-border-div bg-danger"></div>
+                    @endif
                         <div class="card-header card-hp-header bg-gray-dark  d-flex align-items-end p-4 ps-2 pb-3">
                             <div class="text-white text-size-sm">{{ $document->marche()->first()->user()->first()->name }}</div>
                         </div>
                         <div class="card-body card-hp-body ">
-                            <button class="btn btn-warning btn-card rounded-0 py-1">En cours</button>
+                          @if(compareDate($document->date_limite))
+
+                            <button class="btn bg-success  text-white btn-card rounded-0 py-1">En cours</button>
+                          @else
+                          <button class="btn bg-danger  text-white btn-card rounded-0 py-1">Expiré</button>
+
+                          @endif
                             <div class="text-size-xs mb-3 pt-1 text-start card-hp-content">{{ $document->marche()->first()->intitule }}</div>
-                            <small><Strong>Deadline :</Strong> &nbsp;{{ $document->date_limite}}</small>
+                            <small><Strong>Deadline :</Strong> &nbsp;{{formatdate($document->date_limite) }}</small>
                             <div class="mt-2">
                               <a href="{{ route('consulter',['marche_id'=> $document->marche()->first()->id])}}">  <button class="btn btn-outline-secondary rounded-0">Consulter</button></a>
                             </div>

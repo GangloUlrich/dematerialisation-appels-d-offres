@@ -34,7 +34,7 @@
 
     <div class="container p-3  d-flex flex-lg-row flex-column px-5 ">
         <div class="col-lg-3 col-sm-12  d-flex flex-column mb-md-3">
-            <button class="rounded-0 btn btn-success">FILTRES AVANCES</button>
+            <button class="rounded-0 btn bg-success text-white">FILTRES AVANCES</button>
 
             <form action="" method="post">
             <div class="mb-3">
@@ -50,7 +50,7 @@
 
             </div>
 
-            <button class="rounded-0 btn btn-success  w-100" type="submit">RECHERCHER</button>
+            <button class="rounded-0 btn bg-success text-white  w-100" type="submit">RECHERCHER</button>
             </form>
 
         </div>
@@ -74,18 +74,18 @@
 
                                   <div class=" col-6">
                                       <p class="fw-bolder">Date limite de depôt</p>
-                                      <small class="text-center">{{ $document->date_limite }}</small>
+                                      <small class="text-center">{{ formatdate($document->date_limite)  }}</small>
                                   </div>
 
                                   <div class="col-6">
                                       <p class="fw-bolder">Date d'ouverture des offres</p>
-                                      <small class="text-center">{{ $document->date_ouverture }}</small>
+                                      <small class="text-center">{{ formatdate($document->date_ouverture) }}</small>
                                   </div>
 
                                   </div>
                                  <a href="{{ route('consulter' , ['marche_id'=> $document->marche()->first()->id])}}"><button class="btn btn-secondary btn-sm rounded-3 mb-2">details</button></a> 
                           </div>
-                          <div class="bg-success clip w-25 py-lg-5 d-flex justify-content-end text-left">
+                          <div class="  {{ compareDate($document->date_limite) == true ? 'bg-success' : 'bg-danger' }} clip w-25 py-lg-5 d-flex justify-content-end text-left">
 
                               <div class="d-flex flex-column px-auto my-auto me-4">
 
@@ -95,10 +95,10 @@
                                   @foreach ($daos as $dao ) @if ($dao->marche_id == $document->marche_id)  @else @endif  @endforeach
 
 
-                                      <a href="@foreach ($daos as $dao ) @if ($dao->marche_id == $document->marche_id) {{ route('download_dao',['dao'=>$dao,'user'=>Auth::user()->id]) }} @else @endif  @endforeach"><button class="btn btn-sm btn-light rounded-0 mb-2"><i class="fa fa-folder-open"></i> &nbsp;RETIRER DAO</button></a>
+                                      <a href="@foreach ($daos as $dao ) @if ($dao->marche_id == $document->marche_id) @if(limite($dao->marche->id)) {{ route('download_dao',['dao'=>$dao,'user'=>Auth::user()->id]) }} @else javscript:void(0) @endif @endif  @endforeach"><button class="btn btn-sm btn-light rounded-0 mb-2"><i class="fa fa-folder-open"></i> &nbsp;RETIRER DAO</button></a>
 
 
-                                  <button class="btn btn-sm btn-outline-light rounded-0 mb-2"><strong>12 Jours restants</strong></button>
+                                  
                               </div>
 
 
