@@ -82,8 +82,10 @@ class GuestController extends Controller
     // retrait d'un dossier d'appel d'offres
 
     public function downloadDao ($dao){
+        
         $user = Auth::user()->id;
         $dossier=Document::find($dao);
+
 
         if($dossier->marche()->first()->user()->first()->id == $user){
 
@@ -92,7 +94,7 @@ class GuestController extends Controller
 
         }
 
-        if($dossier->marche()->first()->user()->first()->type = "s_public"){    
+        if($dossier->marche()->first()->user()->first()->type != $user){    
             $today = Carbon::now()->format('Y-m-d');
             $retrait = new Retrait;
             $retrait->date_retrait = $today ;
@@ -107,12 +109,7 @@ class GuestController extends Controller
             return response()->download(public_path("documents/".$dossier->doc_path), $dossier->doc_path,$headers);          
 
         }
-        else
-        {
-        session()->flash('message',"Une structure publique ne postule pas aux appels d'offres");
-            return redirect()->route('consulter',['marche_id'=>$dossier->marche()->first()->id ]);
-
-        }
+      
 
     
     }

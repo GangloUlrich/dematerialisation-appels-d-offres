@@ -81,7 +81,7 @@
                                       <p class="fw-bolder">Date d'ouverture des offres</p>
                                       <small class="text-center">{{ formatdate($document->date_ouverture) }}</small>
                                   </div>
-
+k
                                   </div>
                                  <a href="{{ route('consulter' , ['marche_id'=> $document->marche()->first()->id])}}"><button class="btn btn-secondary btn-sm rounded-3 mb-2">details</button></a> 
                           </div>

@@ -106,7 +106,7 @@
 @if($piece->id == $file->piecenecessaire_id)
         <tr>
             <td>{{ $piece->intitule }} </td>
-            <td>{{ $piece->eliminatoire}}</td>
+            <td>{{ $piece->eliminatoire== 1 ? 'oui' : 'non'}}</td>
             <td>
             <div class="d-flex justify-content-between">
                      <a href=""  target="_blank" class=" text-secondary " data-toggle="tooltip" data-placement="top" title="Voir le document"><i class="fa fa-eye text-size-sm"></i></a>
