@@ -95,7 +95,7 @@
                                   @foreach ($daos as $dao ) @if ($dao->marche_id == $document->marche_id)  @else @endif  @endforeach
 
 
-                                      <a href="@foreach ($daos as $dao ) @if ($dao->marche_id == $document->marche_id) @if(limite($dao->marche->id)) {{ route('download_dao',['dao'=>$dao,'user'=>Auth::user()->id]) }} @else javscript:void(0) @endif @endif  @endforeach"><button class="btn btn-sm btn-light rounded-0 mb-2"><i class="fa fa-folder-open"></i> &nbsp;RETIRER DAO</button></a>
+                                      <a href="@foreach ($daos as $dao ) @if ($dao->marche_id == $document->marche_id) @if(limite($dao->marche->id)) {{ route('download_dao',['dao'=>$dao]) }} @else javscript:void(0) @endif @endif  @endforeach"><button class="btn btn-sm btn-light rounded-0 mb-2"><i class="fa fa-folder-open"></i> &nbsp;RETIRER DAO</button></a>
 
 
                                   

@@ -60,7 +60,7 @@
         </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            <strong>Copyright &copy;2020 Plateforme de depouillement des offres</a>.</strong>Tous droits reservés.
+            <strong>Copyright &copy;2021 SYGDAO</a>.</strong>Tous droits reservés.
 
         </footer>
 
