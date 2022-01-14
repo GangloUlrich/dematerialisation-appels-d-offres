@@ -50,7 +50,8 @@
                       <div class="card-body w-75 pb-0 mb-0">
                       
                         
-                          <p class="card-title fs-6">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. lead-in to additional content. This content is a little bit longer.</p>
+                          <p class="card-title fs-6">                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat amet expedita eum labore, sint totam suscipit sapiente quae. Architecto quam autem, nostrum rerum amet optio harum ad doloribus cupiditate error.
+</p>
                           
   
                           <div class="row ">
@@ -112,7 +113,8 @@
                       <div class="card-body w-75 pb-0 mb-0">
                       
                         
-                          <p class="card-title fs-6">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. lead-in to additional content. This content is a little bit longer.</p>
+                          <p class="card-title fs-6">                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat amet expedita eum labore, sint totam suscipit sapiente quae. Architecto quam autem, nostrum rerum amet optio harum ad doloribus cupiditate error.
+</p>
                           
   
                           <div class="row ">
@@ -175,7 +177,8 @@
                       <div class="card-body w-75 pb-0 mb-0">
                       
                         
-                          <p class="card-title fs-6">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. lead-in to additional content. This content is a little bit longer.</p>
+                          <p class="card-title fs-6">                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat amet expedita eum labore, sint totam suscipit sapiente quae. Architecto quam autem, nostrum rerum amet optio harum ad doloribus cupiditate error.
+</p>
                           
   
                           <div class="row ">
