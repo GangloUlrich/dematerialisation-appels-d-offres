@@ -43,7 +43,7 @@
 
                     </div>
 
-                   
+
                 </div>
             </div>
 
@@ -76,7 +76,7 @@
     <div class=" col-sm-12">
 
     <div class="text-size-sm fm-semibold fw-bold text-dark mb-2  ">Intitule du marché</div>
-    <div class="text-size-xs text-justify fm-regular fw-bold">{{ $data->marche()->first()->intitule }}</div>
+    <div class="text-size-xs text-justify fm-regular font-weight-bold h6">{{ $data->marche()->first()->intitule }}</div>
 
 </div>
 </div>
@@ -88,9 +88,9 @@
 
 <div class="d-flex justify-content-between">
 <div>
-        <div class="text-size-sm fm-regular text-dark mb-2  ">Soumissionnaire : <span class="fm-semibold">{{ $data->user()->first()->name }}</span> </div>
+        <div class="text-size-sm fm-regular text-dark mb-2  ">Soumissionnaire : <span class="fm-semibold font-weight-bold h6">{{ $data->user()->first()->name }}</span> </div>
 
-        <div class="text-size-sm fm-regular mt-2 ">Cout proposé : <span class="fm-semibold">{{ $data->cout }} Francs CFA</span></div>
+        <div class="text-size-sm fm-regular mt-2 ">Cout proposé : <span class="fm-semibold font-weight-bold h6">{{ $data->cout }} Francs CFA</span></div>
         </div>
 
         <div>
@@ -98,10 +98,17 @@
         </div>
 </div>
 
-        <div class="text-size-sm fm-regular mt-2 ">Description de l'offre proposé</div>
-        <div class="text-size-xs fm-light">{!! $data->details !!} </div>
+        <div class="text-size-sm fm-regular mt-2 mb-4 ">Description de l'offre proposé</div>
+        <div class="text-size-xs fm-light font-weight-bold " >{!! $data->details !!} </div>
+        <div class="text-size-sm fm-regular mt-2  ">Documents fournis</div>
+        <table class="table table-striped">
+            @foreach($pieces as $piece)
+            <tr>
+                <td> {{ $piece->intitule }}</td>
+            </tr>
+            @endforeach
 
-       
+        </table>
 
 
 </div>

@@ -78,13 +78,13 @@
     <div class=" col-sm-12">
 
     <div class="text-size-sm fm-semibold fw-bold text-dark mb-2  ">Intitule du marché</div>
-    <div class="text-size-xs text-justify fm-regular fw-bold">{{ $data->marche()->first()->intitule }}</div>        
+    <div class="text-size-xs text-justify fm-regular fw-bold display-5 font-weight-bold">{{ $data->marche()->first()->intitule }}</div>
 
     <div class="text-size-sm fm-semibold mt-2 ">Cout proposé</div>
-    <div class="text-size xs fm-regular">{{ $data->cout }} Francs CFA</div>
+    <div class="text-size xs fm-regular display-5 font-weight-bold">{{ $data->cout }} Francs CFA</div>
 
     <div class="text-size-sm fm-semibold mt-2 ">Description de l'offre proposé</div>
-    <div class="text-size xs fm-regular">{!! $data->details !!} </div>
+    <div class="text-size xs fm-regular display-5 font-weight-bold">{!! $data->details !!} </div>
     </div>
 
     <table class="table table-bordered rounded bg-white w-65 mt-3" data-page-length='10'>
@@ -93,12 +93,12 @@
 
     <tr>
         <th scope="col">Documents fournis </th>
-        <th scope="col">Eliminatoire</th>
+        <th scope="col">Soumis</th>
         <th scope="col">Actions</th>
     </tr>
 </thead>
 <tbody class="bg-white">
-   
+
 @foreach ($files as $file)
 
 @foreach($pieces as $piece)

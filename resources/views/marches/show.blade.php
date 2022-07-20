@@ -160,7 +160,7 @@
         <div class="d-flex justify-content-between mb-3">
             <div class="text-center text-size-md text-uppercase">Documents associés ({{ $documents->count() }} )</div>
             <!-- Button trigger modal -->
-           
+
             <button type="button" class="btn btn-primary text-size-xs" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-plus"></i> Nouveau document </button>
          </div>
 
@@ -268,13 +268,13 @@
                             <a href="{{ route('create_dao',['marche'=>$marche->id]) }}" class="text-success mb-2"><i class="fa fa-plus-circle"></i>&nbsp;Ajouter un dossier d'appel d'offres</a>
                          @endif
 
-                       
+
                             @if($daoAdd == true && $bothDocAdd==false)
-                            
+
 
                                 @if(sizeof($criteres)> 0 && sizeof($pieces)> 0)
                                 <a href="{{ route('create_aao',['marche' =>$marche->id]) }}" class="text-warning mb-2"><i class="fa fa-plus-circle"></i>&nbsp;Ajouter un avis d'appel d'offres</a>
-                                @else 
+                                @else
                                 <span class="text-danger fm-regular text-size-xs">Veuillez renseigner les criteres , les pieces avant de lancer l'avis d'appel à concurrence</span>
                                 @endif
 
@@ -484,7 +484,7 @@
         </div>
                     <div class="mt-3">
                         <p class="fm-semibold text-size-sm">Lien d'invitation de la reunion d'ouverture</p>
-        
+
 
                         @foreach($documents as $document)
 
@@ -494,7 +494,7 @@
                             @endif
 
                         @endforeach
-                    
+
                     </div>
         </div>
 
@@ -525,7 +525,7 @@
                                         <td>{{ $retrait->user()->first()->name }}</td>
                                         <td>{{ $retrait->user()->first()->email }}</td>
                                         <td>{{ $retrait->user()->first()->tel }}</td>
-                                        
+
                                     </tr>
                                 @endforeach
                             @endisset
@@ -558,16 +558,12 @@
                         <td>{{ $soumission->date_soumission }}</td>
                         <td>
 
-                        @if(ouverture($soumission->marche_id))
+
                         <a href="{{ route('ouvertureBid',['soumission' => $soumission ])}}" class="btn btn-sm btn-success"><i class="fa fa-unlock"></i> Ouvrir</a>
                         <a href="{{ route('evaluationBid',['soumission' => $soumission ])}}" class="btn btn-sm btn-danger"><i class="fa fa-unlock"></i> Evaluer</a>
-                        @else
-                        <a href="javascript:void(0)" class="btn btn-sm btn-success"><i class="fa fa-lock"></i> Ouvrir</a>
-                        <a href="javascript:void(0)" class="btn btn-sm btn-danger"><i class="fa fa-lock"></i> Evaluer</a>
-                        
-                        @endif
+
                     </td>
-                        
+
                     </tr>
                 @endforeach
             @endisset

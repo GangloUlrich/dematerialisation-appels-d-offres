@@ -83,7 +83,7 @@
 
 
             <input type="hidden" name="soumission" value="{{ $soumission}}">
-        
+
 
             <div class="row mb-3">
                 <div class="col-12">
@@ -97,7 +97,7 @@
             @foreach($pieces as $piece)
             <div class="row mb-3">
                 <div class="col-12">
-                    <label for="intitule" class="fw-bold">{{ $piece->intitule}}<span class='text-danger'>  {{ $piece->eliminatoire == "1" ? " (*)" : "" }}</span></label>
+                    <label for="intitule" class="fw-bold">{{ $piece->intitule}}<span class='text-danger'></span></label>
                     <input type="file" name="filenames[]" id="name" accept="pdf"
                         class="form-control  @error('') is-invalid @enderror">
                     @error('') <small class="text-danger">{{ $message }}</small>@enderror

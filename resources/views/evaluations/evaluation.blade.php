@@ -30,20 +30,20 @@
                 <div class="row d-flex justify-content-between align-items-center">
 
                     <div class="col-sm-9">
-                        <small class="fm-regular text-size-md">Ouverture des offres </small>
+                        <small class="fm-regular text-size-md">Evaluation des offres </small>
 
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"
                                         class="text-warning">Dashboard</a></li>
                                 <li class="breadcrumb-item">Marchés</li>
-                                <li class="breadcrumb-item active" aria-current="page">ouverture</li>
+                                <li class="breadcrumb-item active" aria-current="page">evaluation</li>
                             </ol>
                         </nav>
 
                     </div>
 
-                   
+
                 </div>
             </div>
 
@@ -75,8 +75,8 @@
 <div class="container-fluid p-lg-3 mb-2 bg-white rounded">
     <div class=" col-sm-12">
 
-    <div class="text-size-sm fm-semibold fw-bold text-dark mb-2  ">Intitule du marché</div>
-    <div class="text-size-xs text-justify fm-regular fw-bold">{{ $data->marche()->first()->intitule }}</div>
+    <div class="text-size-sm fm-semibold font-weight-bold text-dark mb-2  ">Intitule du marché</div>
+    <div class="text-size-xs text-justify fm-regular fw-bold h3">{{ $data->marche()->first()->intitule }}</div>
 
 </div>
 </div>
@@ -84,17 +84,17 @@
 
 <div class="container-fluid p-lg-4 bg-white rounded">
     <div class=" col-sm-12">
-  <div class="text-size-sm fm-regular text-dark mb-2  ">Soumissionnaire : <span class="fm-semibold">{{ $data->user()->first()->name }}</span> </div>
+  <div class="text-size-sm fm-regular text-dark mb-2  ">Soumissionnaire : <span class="fm-semibold font-weight-bold display-6">{{ $data->user()->first()->name }}</span> </div>
 
-        <div class="text-size-sm fm-regular mt-2 ">Cout proposé : <span class="fm-semibold">{{ $data->cout }} Francs CFA</span></div>
+        <div class="text-size-sm fm-regular mt-2 ">Cout proposé : <span class="fm-semibold font-weight-bold display-6   ">{{ $data->cout }} Francs CFA</span></div>
         </div>
 
-        <div class="text-size-sm fm-regular mt-2 ">Description de l'offre proposé</div>
+        <div class="text-size-sm fm-regular mt-2 font-weight-bold display-6">Description de l'offre proposé</div>
         <div class="text-size-xs fm-light">{!! $data->details !!} </div>
 
         <div class="text-size-sm fm-regular my-2 text-danger ">Liste des documents fournis</div>
 
-        <table class="table table-bordered rounded bg-white w-65 mt-3" data-page-length='10'>
+        <table class="table table-bordered table-striped rounded bg-white w-65 mt-3" data-page-length='10'>
 
 <thead class="bg-success text-white">
 
@@ -106,7 +106,7 @@
     </tr>
 </thead>
 <tbody class="bg-white">
-   
+
 @foreach($pieces as $piece)
         <tr>
             <td>{{ $piece->intitule }} </td>
@@ -118,13 +118,13 @@
             non
             @endif
             </td>
-            
+
             <td>
             @if(hasProvidedFile($data->id,$piece))
             <div class="d-flex justify-content-between">
                      <a href=""  target="_blank" class=" text-secondary " data-toggle="tooltip" data-placement="top" title="Voir le document"><i class="fa fa-eye text-size-sm"></i> Voir </a>
                     </div>
-            
+
             @else
 
             @endif
@@ -134,9 +134,9 @@
 
 </tbody>
 </table>
-       
-       
-     
+
+
+
 
 
 </div>
@@ -170,7 +170,7 @@
             <input type="number" name="notes[]" id="note" class="form-control  w-75 rounded-0 @error('intitule') is-invalid @enderror">
             </div>
 
-            <div class="col-2  fm-bold text-danger text-size-sm">{{ $critere->note }} points</div>     
+            <div class="col-2  fm-bold text-danger text-size-sm">{{ $critere->note }} points</div>
             @error('note') <small class="text-danger">{{ $message }}</small>@enderror
 
     </div>
