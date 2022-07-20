@@ -1,5 +1,6 @@
-/vendor/
-node_modules/
+/vendor/*
+.idea/*
+node_modules/*
 npm-debug.log
 yarn-error.log
 public/documents/*
