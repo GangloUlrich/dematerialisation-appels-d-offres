@@ -1,3 +1,5 @@
+#  Système de gestion dématérialisée des appels d'offres
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
@@ -7,56 +9,111 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## A propos 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+La passation des **marchés publics** par les organismes de l’Etat permet aux gouvernements d’assurer les services publics tout en répondant à leurs besoins à travers des appels d’offres.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Malgré l’essor que connaissent les technologies de l’information et de la communication au Bénin, nous constatons que les entreprises éprouvent des difficultés à retirer physiquement les dossiers d’appel
+d’offres au niveau des secrétariats des structures étatiques et organisations concernées. Nous notons également la difficulté des entreprises à joindre rapidement la structure commanditaire d’un marché
+afin de lui poser des préoccupations relatives au marché dont il est question. Aussi, la soumission des offres par les entreprises et leur évaluation par les équipes spécialisées des structures contractantes se
+fait manuellement.Tout ceci rend le processus qui conduit à l’attribution du marché lent.  
 
-## Learning Laravel
+Nous avons proposé dans ce projet, la mise en place d’une plateforme web permettant de faire le retrait numérique du dossier d’appel d’offres, la soumission et l’évaluation des offres.Notre plateforme permet
+de digitaliser le processus d’attribution des marchés publics et de réduire la durée de celui-ci. 
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Fonctionnalités
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+* Retrait numérique du dossier d’appels d’offres
+* Soumission des offres 
+* Planification de reunion d'ouverture 
+* Ouverture en ligne des offres
+* Evaluation des offres 
 
-## Laravel Sponsors
+## Configuration
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+| Outils | Versions |
+| :-----:| :-------:|
+| [Framework Laravel](https://laravel.com/docs/8.x/installation) | `v8.83.18`|
+| [Base de donnees MariaDB](https://mariadb.org/documentation/) | `v10` |
+| [Framework css Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/) | `v5.0.1` |
 
-### Premium Partners
+## Environnement Docker 
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
+<p align="center">
+<a href="https://www.docker.com/"><img src="https://www.docker.com/wp-content/uploads/2022/03/horizontal-logo-monochromatic-white.png.webp" width="20%" alt="docker official site"></a>
 
-## Contributing
+</p>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Notre projet peut etre executer dans un environnement docker. Nous avons realise un tutoriel pour le faire 
 
-## Code of Conduct
+### Clonage du projet 
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+1. **Cloner le projet sur le referentiel github**
 
-## Security Vulnerabilities
+ ``` 
+ git clone https://github.com/GangloUlrich/dematerialisation-appels-d-offres.git 
+ ```
+ 
+2. **cd le dossier du projet sur votre machine**
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Vous devrez être à l'intérieur du dossier du projet pour entrer toutes les autres commandes
 
-## License
+```
+cd dematerialisation-appels-d-offres/ 
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+3. **fichier de configuration .env**
+
+Creer un nouveau fichier `.env` et copier dedans les informations du fichier `.env.example`
+
+````
+cp .env .env.example
+
+````
+
+4. **Générez une clé de chiffrement d'application**
+
+L'application utilisera cette clé de cryptage pour coder divers éléments de votre application, des cookies aux hachages de mots de passe, etc.
+
+````
+  php artisan key:generate 
+````
+
+### Docker
+
+L'éxécution des commandes docker nécessite l'installation de docker sur votre machine.
+
+Installer docker à partir de la [documentation](https://docs.docker.com/).
+
+Laravel fournit un package pour l'éxécution des commandes docker plus facilement [`Laravel Sail`](https://laravel.com/docs/8.x/sail)
+
+Le fichier `docker-compose.yml` se trouve à la racine de notre projet.
+
+1. **Creer un alias Bash** 
+
+````
+alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
+````
+
+2. **Demarrage des services** 
+
+Nous avons comme service mariaDB et le projet Laravel 
+
+````
+sail up -d 
+````
+
+3. **Lancer les migrations de la base de données**
+
+````
+sail php artisan migrate
+````
+
+4. **Commande pour arrêter les conteneurs** 
+
+```` 
+sail stop
+````
+## Licence MIT
+
