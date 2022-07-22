@@ -30,6 +30,8 @@ de digitaliser le processus d’attribution des marchés publics et de réduire 
 * Ouverture en ligne des offres
 * Evaluation des offres 
 
+> Le document complet de mémoire est disponible à l'adresse : [`https://www.overleaf.com/read/nygdnjhnbbtm`](https://www.overleaf.com/read/nygdnjhnbbtm)
+
 ## Configuration
 
 | Outils | Versions |
