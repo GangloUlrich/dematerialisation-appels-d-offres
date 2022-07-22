@@ -74,7 +74,18 @@ cp .env .env.example
 
 ````
 
-4. **Générez une clé de chiffrement d'application**
+4. **Installer les dépendances composer du projet**
+
+>[`Composer`](https://getcomposer.org/) est le gestionnaire de dépendances `PHP`
+
+La liste des dépendances nécessaire pour démarrer le projet son répertorié dans le fichier `composer.json`
+
+````
+composer install
+````
+
+
+5. **Générez une clé de chiffrement d'application**
 
 L'application utilisera cette clé de cryptage pour coder divers éléments de votre application, des cookies aux hachages de mots de passe, etc.
 
@@ -106,6 +117,8 @@ Nous avons comme service mariaDB et le projet Laravel
 sail up -d 
 ````
 
+Une fois les conteneurs de l'application démarrés, vous pouvez accéder au projet dans votre navigateur Web à l' adresse : [`http://localhost`](http://localhost).
+
 3. **Lancer les migrations de la base de données**
 
 ````
@@ -113,6 +126,9 @@ sail php artisan migrate
 ````
 
 4. **Commande pour arrêter les conteneurs** 
+
+
+Pour arrêter tous les conteneurs, vous pouvez simplement appuyer sur `Ctrl + C` pour arrêter l'exécution du conteneur. Ou, si les conteneurs s'exécutent en arrière-plan, vous pouvez utiliser la `stop` commande :
 
 ```` 
 sail stop
